@@ -77,7 +77,11 @@
 		9DB778F52BDADFF7001C3B34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9DB778F72BDAE01E001C3B34 /* Main */,
+				9DB778FA2BDB12AB001C3B34 /* Home */,
+				9DB778FB2BDB12B5001C3B34 /* Chat */,
+				9DB778FC2BDB12BA001C3B34 /* Create */,
+				9DB778FD2BDB12C3001C3B34 /* Calendar */,
+				9DB778FE2BDB12C7001C3B34 /* Notification */,
 				9DB778F62BDADFFD001C3B34 /* TabBar */,
 			);
 			path = Modules;
@@ -91,12 +95,40 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		9DB778F72BDAE01E001C3B34 /* Main */ = {
+		9DB778FA2BDB12AB001C3B34 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9DB778FB2BDB12B5001C3B34 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		9DB778FC2BDB12BA001C3B34 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		9DB778FD2BDB12C3001C3B34 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
 				9DB778D62BDABDE7001C3B34 /* ViewController.swift */,
 			);
-			path = Main;
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		9DB778FE2BDB12C7001C3B34 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

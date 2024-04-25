@@ -8,12 +8,22 @@
 import UIKit
 
 final class TabBarViewController: UITabBarController {
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupTabs()
+    }
 
-    // Создаем и конфигурируем кнопки для TabBar
+    // MARK: - Setup&Config
+    
     private func setupTabs() {
         let firstViewController = ViewController()
         let secondViewController = ViewController()
         let thirdViewController = ViewController()
+        let forthViewController = ViewController()
+        let fifthViewController = ViewController()
 
         let first = self.createNavigation(
             with: Texts.tabBarAccount,
@@ -30,6 +40,16 @@ final class TabBarViewController: UITabBarController {
             and: UIImage(systemName: "star.fill"),
             vc: thirdViewController
         )
+        let forth = self.createNavigation(
+            with: Texts.tabBarFavourite,
+            and: UIImage(systemName: "star.fill"),
+            vc: forthViewController
+        )
+        let fifth = self.createNavigation(
+            with: Texts.tabBarFavourite,
+            and: UIImage(systemName: "star.fill"),
+            vc: fifthViewController
+        )
 
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
@@ -37,9 +57,10 @@ final class TabBarViewController: UITabBarController {
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         UITabBar.appearance().standardAppearance = tabBarAppearance
 
-        self.setViewControllers([first, second, third], animated: true)
-        self.selectedViewController = self.viewControllers?[1]
+        self.setViewControllers([first, second, third, forth, fifth], animated: true)
     }
+    
+    // MARK: - Helpers
 
     private func createNavigation(with title: String?, and image: UIImage?, vc: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: vc)
@@ -49,12 +70,9 @@ final class TabBarViewController: UITabBarController {
         
         return navigation
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTabs()
-    }
 }
+
+// MARK: - Constants
 
 private extension TabBarViewController {
     struct Texts {
