@@ -13,6 +13,11 @@
 		9DB778DC2BDABDE9001C3B34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB778DB2BDABDE9001C3B34 /* Assets.xcassets */; };
 		9DB778F32BDADCFA001C3B34 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778F22BDADCFA001C3B34 /* TabBarController.swift */; };
 		9DB778F92BDAE0D6001C3B34 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB778F82BDAE0D6001C3B34 /* Launch Screen.storyboard */; };
+		9DB779002BDB151F001C3B34 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778FF2BDB151F001C3B34 /* HomeViewController.swift */; };
+		9DB779022BDB153C001C3B34 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB779012BDB153C001C3B34 /* ChatViewController.swift */; };
+		9DB779042BDB1549001C3B34 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB779032BDB1549001C3B34 /* CreateViewController.swift */; };
+		9DB779062BDB1554001C3B34 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB779052BDB1554001C3B34 /* NotificationViewController.swift */; };
+		9DB779082BDB1576001C3B34 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB779072BDB1576001C3B34 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		9DB778E02BDABDE9001C3B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DB778F22BDADCFA001C3B34 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9DB778F82BDAE0D6001C3B34 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		9DB778FF2BDB151F001C3B34 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9DB779012BDB153C001C3B34 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		9DB779032BDB1549001C3B34 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		9DB779052BDB1554001C3B34 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		9DB779072BDB1576001C3B34 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 			children = (
 				9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */,
 				9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */,
+				9DB778D62BDABDE7001C3B34 /* ViewController.swift */,
 				9DB778DB2BDABDE9001C3B34 /* Assets.xcassets */,
 				9DB778F82BDAE0D6001C3B34 /* Launch Screen.storyboard */,
 			);
@@ -98,6 +109,7 @@
 		9DB778FA2BDB12AB001C3B34 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9DB778FF2BDB151F001C3B34 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -105,6 +117,7 @@
 		9DB778FB2BDB12B5001C3B34 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				9DB779012BDB153C001C3B34 /* ChatViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -112,6 +125,7 @@
 		9DB778FC2BDB12BA001C3B34 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				9DB779032BDB1549001C3B34 /* CreateViewController.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -119,7 +133,7 @@
 		9DB778FD2BDB12C3001C3B34 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				9DB778D62BDABDE7001C3B34 /* ViewController.swift */,
+				9DB779072BDB1576001C3B34 /* CalendarViewController.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -127,6 +141,7 @@
 		9DB778FE2BDB12C7001C3B34 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				9DB779052BDB1554001C3B34 /* NotificationViewController.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -201,9 +216,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DB779002BDB151F001C3B34 /* HomeViewController.swift in Sources */,
 				9DB778D72BDABDE7001C3B34 /* ViewController.swift in Sources */,
+				9DB779062BDB1554001C3B34 /* NotificationViewController.swift in Sources */,
+				9DB779042BDB1549001C3B34 /* CreateViewController.swift in Sources */,
 				9DB778F32BDADCFA001C3B34 /* TabBarController.swift in Sources */,
 				9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */,
+				9DB779082BDB1576001C3B34 /* CalendarViewController.swift in Sources */,
+				9DB779022BDB153C001C3B34 /* ChatViewController.swift in Sources */,
 				9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
