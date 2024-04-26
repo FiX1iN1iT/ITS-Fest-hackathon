@@ -64,6 +64,13 @@
 		9DB779042BDB1549001C3B34 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB779032BDB1549001C3B34 /* CreateViewController.swift */; };
 		9DB779062BDB1554001C3B34 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB779052BDB1554001C3B34 /* NotificationViewController.swift */; };
 		9DB779082BDB1576001C3B34 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB779072BDB1576001C3B34 /* CalendarViewController.swift */; };
+		B48BAABC2BDC4D0000F373BB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAABB2BDC4D0000F373BB /* SplashViewController.swift */; };
+		B48BAABE2BDC4D1300F373BB /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAABD2BDC4D1300F373BB /* SplashPresenter.swift */; };
+		B48BAAC22BDC4EEC00F373BB /* SplashProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAC12BDC4EEC00F373BB /* SplashProtocols.swift */; };
+		B48BAAC42BDC4F3200F373BB /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAC32BDC4F3200F373BB /* SplashViewModel.swift */; };
+		B48BAAC62BDC4F4C00F373BB /* SplashAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAC52BDC4F4C00F373BB /* SplashAssembly.swift */; };
+		B48BAACA2BDC56D100F373BB /* ColorsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAC92BDC56D100F373BB /* ColorsConstants.swift */; };
+		B48BAACC2BDC6A8300F373BB /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAACB2BDC6A8300F373BB /* SplashRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +124,13 @@
 		9DB779032BDB1549001C3B34 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		9DB779052BDB1554001C3B34 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		9DB779072BDB1576001C3B34 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		B48BAABB2BDC4D0000F373BB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B48BAABD2BDC4D1300F373BB /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		B48BAAC12BDC4EEC00F373BB /* SplashProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashProtocols.swift; sourceTree = "<group>"; };
+		B48BAAC32BDC4F3200F373BB /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		B48BAAC52BDC4F4C00F373BB /* SplashAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAssembly.swift; sourceTree = "<group>"; };
+		B48BAAC92BDC56D100F373BB /* ColorsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConstants.swift; sourceTree = "<group>"; };
+		B48BAACB2BDC6A8300F373BB /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +307,7 @@
 				9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */,
 				9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */,
 				9DB778D62BDABDE7001C3B34 /* ViewController.swift */,
+				B48BAAC92BDC56D100F373BB /* ColorsConstants.swift */,
 				9DB778DB2BDABDE9001C3B34 /* Assets.xcassets */,
 				9DB778F82BDAE0D6001C3B34 /* Launch Screen.storyboard */,
 			);
@@ -302,6 +317,7 @@
 		9DB778F52BDADFF7001C3B34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B48BAABA2BDC4CED00F373BB /* Splash */,
 				9DB778FA2BDB12AB001C3B34 /* Home */,
 				9DB778FB2BDB12B5001C3B34 /* Chat */,
 				9DB778FC2BDB12BA001C3B34 /* Create */,
@@ -361,6 +377,19 @@
 				9DB779052BDB1554001C3B34 /* NotificationViewController.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		B48BAABA2BDC4CED00F373BB /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B48BAABB2BDC4D0000F373BB /* SplashViewController.swift */,
+				B48BAABD2BDC4D1300F373BB /* SplashPresenter.swift */,
+				B48BAAC12BDC4EEC00F373BB /* SplashProtocols.swift */,
+				B48BAAC32BDC4F3200F373BB /* SplashViewModel.swift */,
+				B48BAAC52BDC4F4C00F373BB /* SplashAssembly.swift */,
+				B48BAACB2BDC6A8300F373BB /* SplashRouter.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +480,7 @@
 			files = (
 				20A588CD2BDBE2FD00596EE7 /* RegistrationProtocols.swift in Sources */,
 				7465F9A02BDBA36E00CF0AE5 /* FeedProtocols.swift in Sources */,
+				B48BAACC2BDC6A8300F373BB /* SplashRouter.swift in Sources */,
 				748204652BDC1E7C005E7BF2 /* DetailViewModel.swift in Sources */,
 				7465F9922BDBA35F00CF0AE5 /* ReplyRouter.swift in Sources */,
 				20A588CC2BDBE2FD00596EE7 /* RegistrationViewController.swift in Sources */,
@@ -459,15 +489,20 @@
 				20A588CA2BDBE2FD00596EE7 /* RegistrationPresenter.swift in Sources */,
 				7465F9B52BDBC21300CF0AE5 /* AuthViewController.swift in Sources */,
 				748204602BDC19CD005E7BF2 /* BaseRouter.swift in Sources */,
+				B48BAAC62BDC4F4C00F373BB /* SplashAssembly.swift in Sources */,
+				B48BAAC22BDC4EEC00F373BB /* SplashProtocols.swift in Sources */,
 				7482041D2BDBCB01005E7BF2 /* UIColor + HEX.swift in Sources */,
 				9DB779062BDB1554001C3B34 /* NotificationViewController.swift in Sources */,
 				7465F9912BDBA35F00CF0AE5 /* ReplyPresenter.swift in Sources */,
 				7482045B2BDC15D3005E7BF2 /* DetailProjectInteractor.swift in Sources */,
+				B48BAAC42BDC4F3200F373BB /* SplashViewModel.swift in Sources */,
 				20A588CE2BDBE2FD00596EE7 /* RegistrationInteractor.swift in Sources */,
 				7465F9A12BDBA36E00CF0AE5 /* FeedInteractor.swift in Sources */,
+				B48BAABE2BDC4D1300F373BB /* SplashPresenter.swift in Sources */,
 				7465F9B82BDBC21300CF0AE5 /* AuthContainer.swift in Sources */,
 				7465F9B62BDBC21300CF0AE5 /* AuthProtocols.swift in Sources */,
 				20A588CF2BDBE2FD00596EE7 /* RegistrationContainer.swift in Sources */,
+				B48BAABC2BDC4D0000F373BB /* SplashViewController.swift in Sources */,
 				748204582BDC15D3005E7BF2 /* DetailProjectRouter.swift in Sources */,
 				9DB779042BDB1549001C3B34 /* CreateViewController.swift in Sources */,
 				7465F99E2BDBA36E00CF0AE5 /* FeedRouter.swift in Sources */,
@@ -494,6 +529,7 @@
 				7465F9722BDB9CDD00CF0AE5 /* AuthService.swift in Sources */,
 				7482045A2BDC15D3005E7BF2 /* DetailProjectProtocols.swift in Sources */,
 				9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */,
+				B48BAACA2BDC56D100F373BB /* ColorsConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
