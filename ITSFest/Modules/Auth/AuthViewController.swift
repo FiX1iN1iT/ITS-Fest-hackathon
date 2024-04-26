@@ -13,6 +13,7 @@ import SnapKit
 
 private enum Constants {
     static let backgroundColor = UIColor(hex: "212832")
+    static let imageLogo = UIImage(systemName: "logoImage")
 }
 
 // MARK: - AuthViewController
@@ -54,14 +55,29 @@ private extension AuthViewController {
             passwordLabel,
             logo
         ].forEach {
-            view.addSubview(
-                $0
-            )
+            view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
-        
+
         view.backgroundColor = Constants.backgroundColor
+        
+        makeLogo()
     }
+    
+    func makeLogo() {
+        logo.image = Constants.imageLogo
+        if logo.image == nil {
+            print("Image not loaded")
+        }
+
+        logo.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(20)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(200) // Ширина
+            make.height.equalTo(100) // Высота
+        }
+    }
+
 }
 
 // MARK: - AuthViewInput
