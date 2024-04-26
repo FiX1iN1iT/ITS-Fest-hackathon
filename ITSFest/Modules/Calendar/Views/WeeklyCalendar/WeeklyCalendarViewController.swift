@@ -8,16 +8,25 @@
 import UIKit
 import SnapKit
 
+// MARK: - Delegate Protocol
+
+protocol WeeklyCalendarViewControllerDelegate: AnyObject {
+    func didTapDay(_ date: Date)
+}
+
 final class WeeklyCalendarViewController: UIViewController {
     
     // MARK: - Private properties
     
+    private let monthLabel = UILabel()
     private var weekCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     
     private var calendar: [[Date]] = []
     
     private var selectedCell: (outerIndexPath: IndexPath, innerIndexPath: IndexPath)?
     private var shouldDeselectCell: (outerIndexPath: IndexPath, innerIndexPath: IndexPath)?
+    
+    weak var delegate: WeeklyCalendarViewControllerDelegate?
     
     // MARK: - Lifecycle
 
@@ -35,14 +44,31 @@ private extension WeeklyCalendarViewController {
     
     func setup() {
         setupView()
-        setupOuterCollectionView()
+        setupMonthLabel()
+        setupWeekCollectionView()
     }
 
     func setupView() {
         view.backgroundColor = Constants.backgroundColor
     }
     
-    func setupOuterCollectionView() {
+    func setupMonthLabel() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Constants.MonthLabel.dateFormat
+        
+        let currentDate = dateFormatter.string(from: Date())
+        
+        monthLabel.text = currentDate
+        
+        view.addSubview(monthLabel)
+        monthLabel.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(Constants.MonthLabel.horizontalMargin)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.height.equalTo(Constants.MonthLabel.height)
+        }
+    }
+    
+    func setupWeekCollectionView() {
         weekCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UIHelper.createSingleColumnFlowLayout(in: view))
         weekCollectionView.dataSource = self
         weekCollectionView.delegate = self
@@ -65,7 +91,9 @@ private extension WeeklyCalendarViewController {
         
         view.addSubview(weekCollectionView)
         weekCollectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.height.equalTo(Constants.WeekCollectionView.height)
         }
     }
     
@@ -156,7 +184,7 @@ extension WeeklyCalendarViewController: UICollectionViewDataSource {
 
 extension WeeklyCalendarViewController: WeekCollectionViewCellDelegate {
     func didTapDay(_ date: Date) {
-//        output.didTapNewDate(date)  // delegate in outer vc
+        delegate?.didTapDay(date)
         shouldDeselectCell = selectedCell
         if
             let selectedCell = selectedCell,
@@ -186,9 +214,14 @@ private extension WeeklyCalendarViewController {
     struct Constants {
         static let backgroundColor: UIColor = .clear
         
-        struct OuterCollectionView {
-            static let marginTop: CGFloat = 20
+        struct WeekCollectionView {
             static let height: CGFloat = 60
+        }
+        
+        struct MonthLabel {
+            static let dateFormat: String = "MMMM"
+            static let height: CGFloat = 20
+            static let horizontalMargin: CGFloat = 20
         }
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class DayCollectionViewCell: UICollectionViewCell {
+final class DayCollectionViewCell: UICollectionViewCell {
     static let reuseID = "DayCollectionViewCell"
     
     private var stackView = UIStackView()

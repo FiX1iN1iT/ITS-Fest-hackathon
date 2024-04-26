@@ -14,7 +14,7 @@ protocol WeekCollectionViewCellDelegate: AnyObject {
     func didTapDay(_ date: Date)
 }
 
-class WeekCollectionViewCell: UICollectionViewCell {
+final class WeekCollectionViewCell: UICollectionViewCell {
     static let reuseID = "WeekCollectionViewCell"
     
     weak var delegate: WeekCollectionViewCellDelegate?

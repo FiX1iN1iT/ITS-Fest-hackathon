@@ -26,6 +26,10 @@ protocol CalendarViewInput: AnyObject {
 
 protocol CalendarViewOutput: AnyObject {
     func didLoadView()
+    func didTapDay(_ date: Date)
+    func numberOfSections() -> Int
+    func numberOfRowsInSection(_ section: Int) -> Int
+    func getTask(at index: Int) -> Task
 }
 
 protocol CalendarInteractorInput: AnyObject {
