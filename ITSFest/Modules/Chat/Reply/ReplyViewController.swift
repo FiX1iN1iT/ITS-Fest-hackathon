@@ -1,5 +1,5 @@
 //
-//  ChatViewController.swift
+//  ReplyViewController.swift
 //  ITSFest
 //
 //  Created by Grigory Don on 26.04.2024.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class ChatViewController: UIViewController {
-    private let output: ChatViewOutput
+final class ReplyViewController: UIViewController {
+    private let output: ReplyViewOutput
 
-    init(output: ChatViewOutput) {
+    init(output: ReplyViewOutput) {
         self.output = output
 
         super.init(nibName: nil, bundle: nil)
@@ -27,5 +27,5 @@ final class ChatViewController: UIViewController {
     }
 }
 
-extension ChatViewController: ChatViewInput {
+extension ReplyViewController: ReplyViewInput {
 }
