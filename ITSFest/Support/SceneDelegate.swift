@@ -16,11 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        window = UIWindow(windowScene: windowScene)
-        
-        let detailFlow = DetailProjectContainer.assemble(with: nil)
-        let navigationController = UINavigationController()
-        
-        detailFlow.router.openModuleFromWindow(window: window, navigationController: navigationController)
+        let viewController = SplashAssembly.assembly()
+        let navigationController = UINavigationController(rootViewController: viewController)
+
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
 }
