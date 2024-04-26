@@ -130,7 +130,14 @@
 			path = Reply;
 			sourceTree = "<group>";
 		};
-		9D65C1302BDBA74500BFDFF8 /* Auth */ = {
+		7482041E2BDBD5D6005E7BF2 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		7482041F2BDBD5E7005E7BF2 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
 				7465F9AD2BDBC21300CF0AE5 /* AuthPresenter.swift */,
@@ -139,6 +146,15 @@
 				7465F9B02BDBC21300CF0AE5 /* AuthProtocols.swift */,
 				7465F9B12BDBC21300CF0AE5 /* AuthInteractor.swift */,
 				7465F9B22BDBC21300CF0AE5 /* AuthContainer.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		9D65C1302BDBA74500BFDFF8 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7482041E2BDBD5D6005E7BF2 /* Registration */,
+				7482041F2BDBD5E7005E7BF2 /* Authorization */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
