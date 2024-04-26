@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import SnapKit
 
 final class AuthViewController: UIViewController {
+    
+    private let welcomeLabel = UILabel()
+    private let emailLabel = UILabel()
+    private let passwordLabel = UILabel()
+    private let logo = UIImageView()
+    
     private let output: AuthViewOutput
 
     init(output: AuthViewOutput) {
@@ -24,6 +31,22 @@ final class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+private extension AuthViewController {
+    func setupUI() {
+        [
+            welcomeLabel,
+            emailLabel,
+            passwordLabel,
+            logo
+        ].forEach {
+            view.addSubview(
+                $0
+            )
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
 }
 

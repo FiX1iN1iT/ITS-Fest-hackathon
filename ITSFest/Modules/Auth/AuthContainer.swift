@@ -13,14 +13,13 @@ final class AuthContainer { // DI - контрукторный тип
     let viewController: UIViewController
     private(set) weak var router: AuthRouterInput!
     
-    class func assemble(with context: AuthContext) -> AuthContainer {
+    class func assemble() -> AuthContainer {
         let router = AuthRouter()
         let interactor = AuthInteractor()
         let presenter = AuthPresenter(router: router, interactor: interactor)
         let viewController = AuthViewController(output: presenter)
         
         presenter.view = viewController
-        presenter.moduleOutput = context.moduleOutput
         
         interactor.output = presenter
         
@@ -32,8 +31,4 @@ final class AuthContainer { // DI - контрукторный тип
         self.input = input
         self.router = router
     }
-}
-
-struct AuthContext {
-    weak var moduleOutput: AuthModuleOutput?
 }
