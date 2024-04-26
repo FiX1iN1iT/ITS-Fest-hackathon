@@ -9,6 +9,14 @@
 import UIKit
 import SnapKit
 
+// MARK: - Constants
+
+private enum Constants {
+    static let backgroundColor = UIColor(hex: "212832")
+}
+
+// MARK: - AuthViewController
+
 final class AuthViewController: UIViewController {
     
     private let welcomeLabel = UILabel()
@@ -31,8 +39,12 @@ final class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
     }
 }
+
+// MARK: User Interface
 
 private extension AuthViewController {
     func setupUI() {
@@ -47,8 +59,12 @@ private extension AuthViewController {
             )
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
+        
+        view.backgroundColor = Constants.backgroundColor
     }
 }
+
+// MARK: - AuthViewInput
 
 extension AuthViewController: AuthViewInput {
 }
