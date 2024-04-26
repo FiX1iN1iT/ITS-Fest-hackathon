@@ -38,7 +38,10 @@ protocol AuthUIComponentsConfigurationProtocol {
 
 extension AuthUIComponentsConfigurationProtocol {
     
-    func configureTextFieldBox(containerView: UIView, label: UILabel, textField: UITextField) {
+    func configureTextFieldBox(containerView: UIView, label: UILabel, textField: UITextField, image: UIImageView, button: UIButton) {
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = Constants.textFieldColor
         
         label.textColor = Constants.textColor
         
@@ -47,7 +50,7 @@ extension AuthUIComponentsConfigurationProtocol {
         
         containerView.backgroundColor = .clear
         
-        [label, textField].forEach {
+        [label, backgroundView].forEach {
             containerView.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.snp.makeConstraints { make in
@@ -55,14 +58,36 @@ extension AuthUIComponentsConfigurationProtocol {
             }
         }
         
+        [textField, image, button].forEach {
+            containerView.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
         label.snp.makeConstraints { make in
             make.top.equalTo(containerView.snp.top)
         }
         
-        textField.snp.makeConstraints { make in
+        backgroundView.snp.makeConstraints { make in
             make.top.equalTo(label.snp.bottom).offset(5)
             make.bottom.equalTo(containerView.snp.bottom)
             make.height.equalTo(Constants.textFieldHeight)
+        }
+        
+        image.snp.makeConstraints { make in
+            make.centerY.equalTo(backgroundView.snp.centerY)
+            make.centerX.equalTo(backgroundView.snp.left).offset(20)
+        }
+        
+        textField.snp.makeConstraints { make in
+            make.centerY.equalTo(backgroundView.snp.centerY)
+            make.left.equalTo(containerView.snp.left).offset(40)
+            make.right.equalTo(containerView.snp.right).offset(-40)
+            make.height.equalTo(Constants.textFieldHeight)
+        }
+
+        button.snp.makeConstraints { make in
+            make.centerY.equalTo(backgroundView.snp.centerY)
+            make.centerX.equalTo(backgroundView.snp.right).offset(-20)
         }
     }
     
@@ -81,6 +106,7 @@ extension AuthUIComponentsConfigurationProtocol {
     }
     
     func configureTitlelabel(label: UILabel) {
+        
         label.textAlignment = .left
         label.textColor = Constants.titleTextColor
         label.font = UIFont.systemFont(ofSize: Constants.titleLabelFontSize, weight: .semibold)

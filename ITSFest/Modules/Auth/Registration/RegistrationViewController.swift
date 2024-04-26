@@ -34,14 +34,20 @@ final class RegistrationViewController: ViewController, AuthUIComponentsConfigur
     private let nameLabel = UILabel()
     private let nameTextField = UITextField()
     private let nameContainer = UIView()
+    private let nameImageView = UIImageView()
+    private let nameButton = UIButton()
     
     private let emailLabel = UILabel()
     private let emailTextField = UITextField()
     private let emailContainer = UIView()
+    private let emailImageView = UIImageView()
+    private let emailButton = UIButton()
     
     private let passwordLabel = UILabel()
     private let passwordTextField = UITextField()
     private let passwordContainer = UIView()
+    private let passwordImageView = UIImageView()
+    private let passwordButton = UIButton()
     
     private let logInButton = UIButton()
     private let otherLogInWaysLabel = UILabel()
@@ -98,7 +104,6 @@ private extension RegistrationViewController {
         
         view.backgroundColor = Constants.backgroundColor
         
-//        configureLogo(view: view, logo: logo)
         makeCreateLabel()
         makeNameContainer()
         makeEmailContainer()
@@ -143,7 +148,6 @@ private extension RegistrationViewController {
         configureTitlelabel(label: createLabel)
         
         createLabel.snp.makeConstraints { make in
-//            make.top.equalTo(logo.snp.bottom).offset(Constants.horisontalOffset)
             make.top.equalToSuperview().offset(Constants.horisontalOffset)
             make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
         }
@@ -153,9 +157,14 @@ private extension RegistrationViewController {
         
         nameLabel.text = "Full Name"
         
+        nameImageView.image = UIImage(systemName: "person.fill")
+        nameImageView.tintColor = Constants.textColor
+        
         configureTextFieldBox(containerView: nameContainer, 
                               label: nameLabel,
-                              textField: nameTextField)
+                              textField: nameTextField,
+                              image: nameImageView,
+                              button: nameButton)
         
         nameContainer.snp.makeConstraints { make in
             make.top.equalTo(createLabel.snp.bottom).offset(Constants.titleLableAndTextFieldSpace)
@@ -167,9 +176,14 @@ private extension RegistrationViewController {
         
         emailLabel.text = "Email address"
         
+        emailImageView.image = UIImage(systemName: "envelope.fill")
+        emailImageView.tintColor = Constants.textColor
+        
         configureTextFieldBox(containerView: emailContainer, 
                               label: emailLabel,
-                              textField: emailTextField)
+                              textField: emailTextField,
+                              image: emailImageView,
+                              button: emailButton)
         
         emailContainer.snp.makeConstraints { make in
             make.top.equalTo(nameContainer.snp.bottom).offset(Constants.textFieldContainersSpace)
@@ -181,9 +195,17 @@ private extension RegistrationViewController {
         
         passwordLabel.text = "Password"
         
+        passwordImageView.image = UIImage(systemName: "lock.fill")
+        passwordImageView.tintColor = Constants.textColor
+        
+        passwordButton.setImage(UIImage(systemName: "eyes"), for: .normal)
+        passwordButton.tintColor = Constants.textColor
+        
         configureTextFieldBox(containerView: passwordContainer, 
                               label: passwordLabel,
-                              textField: passwordTextField)
+                              textField: passwordTextField,
+                              image: passwordImageView,
+                              button: passwordButton)
         
         passwordContainer.snp.makeConstraints { make in
             make.top.equalTo(emailContainer.snp.bottom).offset(Constants.textFieldContainersSpace)

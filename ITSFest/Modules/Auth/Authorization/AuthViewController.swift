@@ -29,17 +29,28 @@ private enum Constants {
 final class AuthViewController: UIViewController, AuthUIComponentsConfigurationProtocol {
     
     private let welcomeLabel = UILabel()
-    private let emailLabel = UILabel()
-    private let passwordLabel = UILabel()
     private let logo = UIImageView()
+    
+    private let emailLabel = UILabel()
+    
+    private let passwordLabel = UILabel()
+
     private let emailTextField = UITextField()
-    private let passwordTextField = UITextField()
     private let emailContainer = UIView()
+    private let emailImageView = UIImageView()
+    private let emailButton = UIButton()
+    
+    private let passwordTextField = UITextField()
     private let passwordContainer = UIView()
+    private let passwordImageView = UIImageView()
+    private let passwordButton = UIButton()
+    
     private let forgotPasswordButton = UIButton()
+    
     private let logInButton = UIButton()
     private let otherLogInWaysLabel = UILabel()
     private let googleLogInButton = UIButton()
+    
     private let registrationButton = UIButton()
     private let registrationLabel = UILabel()
     private let registrationContainer = UIView()
@@ -112,9 +123,14 @@ private extension AuthViewController {
         
         emailLabel.text = "Email address"
         
+        emailImageView.image = UIImage(systemName: "envelope.fill")
+        emailImageView.tintColor = Constants.textColor
+        
         configureTextFieldBox(containerView: emailContainer, 
                               label: emailLabel,
-                              textField: emailTextField)
+                              textField: emailTextField,
+                              image: emailImageView,
+                              button: emailButton)
         
         emailContainer.snp.makeConstraints { make in
             make.top.equalTo(welcomeLabel.snp.bottom).offset(Constants.titleLableAndTextFieldSpace)
@@ -128,9 +144,17 @@ private extension AuthViewController {
         
         passwordLabel.text = "Password"
         
-        configureTextFieldBox(containerView: passwordContainer, 
+        passwordImageView.image = UIImage(systemName: "lock.fill")
+        passwordImageView.tintColor = Constants.textColor
+        
+        passwordButton.setImage(UIImage(systemName: "eyes"), for: .normal)
+        passwordButton.tintColor = Constants.textColor
+        
+        configureTextFieldBox(containerView: passwordContainer,
                               label: passwordLabel,
-                              textField: passwordTextField)
+                              textField: passwordTextField,
+                              image: passwordImageView,
+                              button: passwordButton)
         
         passwordContainer.snp.makeConstraints { make in
             make.top.equalTo(emailContainer.snp.bottom).offset(Constants.textFieldContainersSpace)

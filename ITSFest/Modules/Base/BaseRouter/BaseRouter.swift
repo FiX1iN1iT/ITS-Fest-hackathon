@@ -18,6 +18,7 @@ class BaseSwiftRouter: BaseSwiftRouterInput {
     }
     
     func openModuleFromViewController(sourseView: UIViewController) {
+        self.view?.present(sourseView, animated: true)
     }
     
     func closeModule() {
