@@ -29,11 +29,12 @@ extension CalendarPresenter: CalendarModuleInput {
 extension CalendarPresenter: CalendarViewOutput {
     func didLoadView() {
         print(#function)
-        tasks = Mock.mockTasks
+        interactor.loadDay(Date())
     }
     
     func didTapDay(_ date: Date) {
-        print(date)
+        print(#function)
+        interactor.loadDay(date)
     }
     
     func numberOfSections() -> Int {
@@ -50,16 +51,23 @@ extension CalendarPresenter: CalendarViewOutput {
 }
 
 extension CalendarPresenter: CalendarInteractorOutput {
-    func didLoadDay(with tasks: [String]) {
-        print(#function)
+    func didLoadDay(with tasks: [Task]) {
+        self.tasks = tasks
+        view?.reloadData()
+        
+        if !tasks.isEmpty {
+            view?.dismissEmptyStateView()
+        } else {
+            view?.showEmptyStateView()
+        }
     }
     
     func didStartLoading() {
-        print(#function)
+        view?.showLoadingView()
     }
     
     func didEndLoading() {
-        print(#function)
+        view?.dismissLoadingView()
     }
 }
 

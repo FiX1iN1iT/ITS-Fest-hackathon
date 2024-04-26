@@ -16,6 +16,9 @@ final class CalendarViewController: UIViewController {
     private let titleLabel = UILabel()
     private let tasksTableView = UITableView(frame: .zero, style: .insetGrouped)
 
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
+    private let emptyStateView = EmptyStateView()
+    
     init(output: CalendarViewOutput) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
@@ -28,8 +31,8 @@ final class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        output.didLoadView()
         setup()
+        output.didLoadView()
     }
 }
 
@@ -133,23 +136,41 @@ extension CalendarViewController: CalendarViewInput {
     }
     
     func reloadData() {
-        print(#function)
-    }
-    
-    func showLoadingView() {
-        print(#function)
-    }
-    
-    func dismissLoadingView() {
-        print(#function)
+        tasksTableView.reloadData()
     }
     
     func showEmptyStateView() {
-        print(#function)
+        titleLabel.text = ""
+        view.addSubview(emptyStateView)
+        
+        emptyStateView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(weeklyCalendarViewController.view.snp.bottom).inset(20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
     }
     
     func dismissEmptyStateView() {
-        print(#function)
+        guard emptyStateView.superview != nil else {
+            return
+        }
+        
+        emptyStateView.removeFromSuperview()
+    }
+    
+    func showLoadingView() {
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
+        activityIndicator.startAnimating()
+    }
+    
+    func dismissLoadingView() {
+        activityIndicator.removeFromSuperview()
     }
 }
 

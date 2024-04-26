@@ -37,7 +37,7 @@ protocol CalendarInteractorInput: AnyObject {
 }
 
 protocol CalendarInteractorOutput: AnyObject {
-    func didLoadDay(with tasks: [String])
+    func didLoadDay(with tasks: [Task])
     func didStartLoading()
     func didEndLoading()
 }
