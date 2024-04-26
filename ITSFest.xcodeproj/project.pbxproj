@@ -32,8 +32,6 @@
 		7465F9B62BDBC21300CF0AE5 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9B02BDBC21300CF0AE5 /* AuthProtocols.swift */; };
 		7465F9B72BDBC21300CF0AE5 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9B12BDBC21300CF0AE5 /* AuthInteractor.swift */; };
 		7465F9B82BDBC21300CF0AE5 /* AuthContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9B22BDBC21300CF0AE5 /* AuthContainer.swift */; };
-		748204192BDBC637005E7BF2 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204182BDBC637005E7BF2 /* FlowCoordinator.swift */; };
-		7482041B2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482041A2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift */; };
 		7482041D2BDBCB01005E7BF2 /* UIColor + HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482041C2BDBCB01005E7BF2 /* UIColor + HEX.swift */; };
 		748204212BDBE6FE005E7BF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 748204202BDBE6FE005E7BF2 /* GoogleService-Info.plist */; };
 		748204242BDBE763005E7BF2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 748204232BDBE763005E7BF2 /* FirebaseAnalytics */; };
@@ -89,8 +87,6 @@
 		7465F9B02BDBC21300CF0AE5 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
 		7465F9B12BDBC21300CF0AE5 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		7465F9B22BDBC21300CF0AE5 /* AuthContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContainer.swift; sourceTree = "<group>"; };
-		748204182BDBC637005E7BF2 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
-		7482041A2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		7482041C2BDBCB01005E7BF2 /* UIColor + HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + HEX.swift"; sourceTree = "<group>"; };
 		748204202BDBE6FE005E7BF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		748204322BDBF8ED005E7BF2 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
@@ -137,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				748204342BDBF916005E7BF2 /* AuthorizationService */,
-				7482045D2BDC1677005E7BF2 /* FlowCoordinator */,
 				7482045E2BDC1692005E7BF2 /* Extensions */,
 			);
 			path = Base;
@@ -222,15 +217,6 @@
 				748204562BDC15D3005E7BF2 /* DetailProjectContainer.swift */,
 			);
 			path = DetailProject;
-			sourceTree = "<group>";
-		};
-		7482045D2BDC1677005E7BF2 /* FlowCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-				748204182BDBC637005E7BF2 /* FlowCoordinator.swift */,
-				7482041A2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift */,
-			);
-			path = FlowCoordinator;
 			sourceTree = "<group>";
 		};
 		7482045E2BDC1692005E7BF2 /* Extensions */ = {
@@ -454,7 +440,6 @@
 				7482045B2BDC15D3005E7BF2 /* DetailProjectInteractor.swift in Sources */,
 				20A588CE2BDBE2FD00596EE7 /* RegistrationInteractor.swift in Sources */,
 				7465F9A12BDBA36E00CF0AE5 /* FeedInteractor.swift in Sources */,
-				748204192BDBC637005E7BF2 /* FlowCoordinator.swift in Sources */,
 				7465F9B82BDBC21300CF0AE5 /* AuthContainer.swift in Sources */,
 				7465F9B62BDBC21300CF0AE5 /* AuthProtocols.swift in Sources */,
 				20A588CF2BDBE2FD00596EE7 /* RegistrationContainer.swift in Sources */,
@@ -472,7 +457,6 @@
 				7465F9942BDBA35F00CF0AE5 /* ReplyProtocols.swift in Sources */,
 				7465F99D2BDBA36E00CF0AE5 /* FeedPresenter.swift in Sources */,
 				748204572BDC15D3005E7BF2 /* DetailProjectPresenter.swift in Sources */,
-				7482041B2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift in Sources */,
 				7465F9B72BDBC21300CF0AE5 /* AuthInteractor.swift in Sources */,
 				7465F9B32BDBC21300CF0AE5 /* AuthPresenter.swift in Sources */,
 				7465F9B42BDBC21300CF0AE5 /* AuthRouter.swift in Sources */,
