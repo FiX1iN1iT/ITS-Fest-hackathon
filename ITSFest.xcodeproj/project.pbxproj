@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20A588CA2BDBE2FD00596EE7 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588C42BDBE2FD00596EE7 /* RegistrationPresenter.swift */; };
+		20A588CB2BDBE2FD00596EE7 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588C52BDBE2FD00596EE7 /* RegistrationRouter.swift */; };
+		20A588CC2BDBE2FD00596EE7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588C62BDBE2FD00596EE7 /* RegistrationViewController.swift */; };
+		20A588CD2BDBE2FD00596EE7 /* RegistrationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588C72BDBE2FD00596EE7 /* RegistrationProtocols.swift */; };
+		20A588CE2BDBE2FD00596EE7 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588C82BDBE2FD00596EE7 /* RegistrationInteractor.swift */; };
+		20A588CF2BDBE2FD00596EE7 /* RegistrationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588C92BDBE2FD00596EE7 /* RegistrationContainer.swift */; };
 		7465F9722BDB9CDD00CF0AE5 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9712BDB9CDD00CF0AE5 /* Service.swift */; };
 		7465F9912BDBA35F00CF0AE5 /* ReplyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F98B2BDBA35F00CF0AE5 /* ReplyPresenter.swift */; };
 		7465F9922BDBA35F00CF0AE5 /* ReplyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F98C2BDBA35F00CF0AE5 /* ReplyRouter.swift */; };
@@ -44,6 +50,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20A588C42BDBE2FD00596EE7 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		20A588C52BDBE2FD00596EE7 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		20A588C62BDBE2FD00596EE7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		20A588C72BDBE2FD00596EE7 /* RegistrationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationProtocols.swift; sourceTree = "<group>"; };
+		20A588C82BDBE2FD00596EE7 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
+		20A588C92BDBE2FD00596EE7 /* RegistrationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationContainer.swift; sourceTree = "<group>"; };
 		7465F9712BDB9CDD00CF0AE5 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		7465F98B2BDBA35F00CF0AE5 /* ReplyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyPresenter.swift; sourceTree = "<group>"; };
 		7465F98C2BDBA35F00CF0AE5 /* ReplyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyRouter.swift; sourceTree = "<group>"; };
@@ -133,6 +145,12 @@
 		7482041E2BDBD5D6005E7BF2 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				20A588C42BDBE2FD00596EE7 /* RegistrationPresenter.swift */,
+				20A588C52BDBE2FD00596EE7 /* RegistrationRouter.swift */,
+				20A588C62BDBE2FD00596EE7 /* RegistrationViewController.swift */,
+				20A588C72BDBE2FD00596EE7 /* RegistrationProtocols.swift */,
+				20A588C82BDBE2FD00596EE7 /* RegistrationInteractor.swift */,
+				20A588C92BDBE2FD00596EE7 /* RegistrationContainer.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -338,20 +356,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A588CD2BDBE2FD00596EE7 /* RegistrationProtocols.swift in Sources */,
 				7465F9A02BDBA36E00CF0AE5 /* FeedProtocols.swift in Sources */,
 				9DB779002BDB151F001C3B34 /* HomeViewController.swift in Sources */,
 				7465F9922BDBA35F00CF0AE5 /* ReplyRouter.swift in Sources */,
+				20A588CC2BDBE2FD00596EE7 /* RegistrationViewController.swift in Sources */,
 				9DB778D72BDABDE7001C3B34 /* ViewController.swift in Sources */,
+				20A588CA2BDBE2FD00596EE7 /* RegistrationPresenter.swift in Sources */,
 				7465F9B52BDBC21300CF0AE5 /* AuthViewController.swift in Sources */,
 				7482041D2BDBCB01005E7BF2 /* UIColor + HEX.swift in Sources */,
 				9DB779062BDB1554001C3B34 /* NotificationViewController.swift in Sources */,
 				7465F9912BDBA35F00CF0AE5 /* ReplyPresenter.swift in Sources */,
+				20A588CE2BDBE2FD00596EE7 /* RegistrationInteractor.swift in Sources */,
 				7465F9A12BDBA36E00CF0AE5 /* FeedInteractor.swift in Sources */,
 				748204192BDBC637005E7BF2 /* FlowCoordinator.swift in Sources */,
 				7465F9B82BDBC21300CF0AE5 /* AuthContainer.swift in Sources */,
 				7465F9B62BDBC21300CF0AE5 /* AuthProtocols.swift in Sources */,
+				20A588CF2BDBE2FD00596EE7 /* RegistrationContainer.swift in Sources */,
 				9DB779042BDB1549001C3B34 /* CreateViewController.swift in Sources */,
 				7465F99E2BDBA36E00CF0AE5 /* FeedRouter.swift in Sources */,
+				20A588CB2BDBE2FD00596EE7 /* RegistrationRouter.swift in Sources */,
 				9DB778F32BDADCFA001C3B34 /* TabBarController.swift in Sources */,
 				7465F9932BDBA35F00CF0AE5 /* ReplyViewController.swift in Sources */,
 				7465F9A22BDBA36E00CF0AE5 /* FeedContainer.swift in Sources */,
