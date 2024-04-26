@@ -13,33 +13,21 @@ import SnapKit
 
 private enum Constants {
     static let backgroundColor = UIColor(hex: "212832")
-    static let textFieldColor = UIColor(hex: "455A64")
     static let textColor = UIColor(hex: "8CAAB9")
-    static let textFieldTextColor = UIColor.white
-    static let logInButtonColor = UIColor(hex: "FED36A")
-    static let logInButtonTextColor = UIColor.black
-    
-    static let imageLogo = UIImage(named: "logoImage")
     
     static let horisontalOffset = 26
-    
-    static let logoTopOffset = 60
-    static let logoHeight = 100
-    static let logoWidth = 150
-    
+ 
     static let welcomeLabelText = "Welcome Back!"
-    static let welcomeLabelFontSize: CGFloat = 24
-    static let welcomeLabelOffsets = 16
-    
-    static let logInButtonText = "Log In"
-    static let logInButtonHeight = 67
-    
-    static let textFieldHeight = 58
+
+    static let textFieldContainersSpace = 20
+    static let logInButtonAndLabelSpace = 15
+    static let textFieldsAndLogInButtonsSpace = 68
+    static let footerAndButtonsSpace = 20
 }
 
 // MARK: - AuthViewController
 
-final class AuthViewController: UIViewController {
+final class AuthViewController: UIViewController, AuthUIComponentsConfigurationProtocol {
     
     private let welcomeLabel = UILabel()
     private let emailLabel = UILabel()
@@ -55,6 +43,7 @@ final class AuthViewController: UIViewController {
     private let googleLogInButton = UIButton()
     private let registrationButton = UIButton()
     private let registrationLabel = UILabel()
+    private let registrationContainer = UIView()
     
     private let output: AuthViewOutput
     
@@ -89,6 +78,7 @@ private extension AuthViewController {
             logInButton,
             otherLogInWaysLabel,
             googleLogInButton,
+            registrationContainer
         ].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +86,7 @@ private extension AuthViewController {
         
         view.backgroundColor = Constants.backgroundColor
         
-        makeLogo()
+        configureLogo(logo: logo)
         makeWelcomelabel()
         makeEmailContainer()
         makePasswordContainer()
@@ -106,66 +96,14 @@ private extension AuthViewController {
         makeRegistrationContainer()
     }
     
-    func makeLogo() {
-        logo.image = Constants.imageLogo
-        if logo.image == nil {
-            print("Image not loaded")
-        }
-        
-        logo.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(Constants.logoTopOffset)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(Constants.logoWidth)
-            make.height.equalTo(Constants.logoHeight)
-        }
-    }
-    
     func makeWelcomelabel() {
+        
         welcomeLabel.text = Constants.welcomeLabelText
-        welcomeLabel.textAlignment = .left
-        welcomeLabel.textColor = .white
-        welcomeLabel.font = UIFont.systemFont(ofSize: Constants.welcomeLabelFontSize, weight: .semibold)
+        
+        configureTitlelabel(label: welcomeLabel)
         
         welcomeLabel.snp.makeConstraints { make in
-            make.top.equalTo(logo.snp.bottom).offset(Constants.welcomeLabelOffsets)
-            make.centerX.equalToSuperview()
-            make.left.equalToSuperview().offset(Constants.welcomeLabelOffsets)
-            make.right.equalToSuperview().offset(-Constants.welcomeLabelOffsets)
-        }
-    }
-    
-    func configureTextFieldBox(containerView: UIView, label: UILabel, textField: UITextField) {
-        
-        label.textColor = Constants.textColor
-        
-        textField.textColor = Constants.textFieldTextColor
-        textField.backgroundColor = Constants.textFieldColor
-
-        containerView.backgroundColor = .clear
-        
-        [label, textField].forEach {
-            containerView.addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.snp.makeConstraints { make in
-                make.left.right.equalTo(containerView)
-            }
-        }
-        
-        label.snp.makeConstraints { make in
-            make.top.equalTo(containerView.snp.top)
-        }
-        
-        textField.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(5)
-            make.bottom.equalTo(containerView.snp.bottom)
-            make.height.equalTo(Constants.textFieldHeight)
-        }
-    }
-    
-    func configureLogInButtonSize(button: UIButton) {
-        
-        button.snp.makeConstraints { make in
-            make.height.equalTo(Constants.logInButtonHeight)
+            make.top.equalTo(logo.snp.bottom).offset(Constants.horisontalOffset)
             make.left.right.equalTo(view).inset(Constants.horisontalOffset)
         }
     }
@@ -191,7 +129,7 @@ private extension AuthViewController {
         configureTextFieldBox(containerView: passwordContainer, label: passwordLabel, textField: passwordTextField)
         
         passwordContainer.snp.makeConstraints { make in
-            make.top.equalTo(emailContainer.snp.bottom).offset(20)
+            make.top.equalTo(emailContainer.snp.bottom).offset(Constants.textFieldContainersSpace)
             make.left.right.equalTo(view).inset(Constants.horisontalOffset)
         }
     }
@@ -199,11 +137,12 @@ private extension AuthViewController {
     func makeForgotPasswordButton() {
         
         forgotPasswordButton.setTitle("Forgot password?", for: .normal)
+        
         forgotPasswordButton.setTitleColor(Constants.textColor, for: .normal)
         forgotPasswordButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
     
         forgotPasswordButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordContainer.snp.bottom).offset(10)
+            make.top.equalTo(passwordContainer.snp.bottom).offset(5)
             make.right.equalTo(passwordContainer.snp.right)
         }
     }
@@ -211,30 +150,55 @@ private extension AuthViewController {
     func makeLogInButton() {
         
         logInButton.setTitle("Log In", for: .normal)
-        logInButton.setTitleColor(Constants.logInButtonTextColor, for: .normal)
-        logInButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        
-        logInButton.backgroundColor = Constants.logInButtonColor
-    
-        configureLogInButtonSize(button: logInButton)
+        configureMainButton(button: logInButton)
         
         logInButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordContainer.snp.bottom).offset(68)
+            make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
+            make.top.equalTo(passwordContainer.snp.bottom).offset(Constants.textFieldsAndLogInButtonsSpace)
         }
     }
     
     func makeOtherLogInWaysLabel() {
         
+        otherLogInWaysLabel.text = "Or continue with"
+        otherLogInWaysLabel.textAlignment = .center
+        
+        configureDefaultLabel(label: otherLogInWaysLabel)
+        
+        otherLogInWaysLabel.snp.makeConstraints { make in
+            make.top.equalTo(logInButton.snp.bottom).offset(Constants.logInButtonAndLabelSpace)
+            make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
+        }
     }
     
     func makeGoogleLogInButton() {
         
+        googleLogInButton.setTitle("Google", for: .normal)
+        googleLogInButton.setImage(UIImage(systemName: "person"), for: .normal)
+
+        configureSecondaryButton(button: googleLogInButton)
+        
+        googleLogInButton.snp.makeConstraints { make in
+            make.top.equalTo(otherLogInWaysLabel.snp.bottom).offset(Constants.logInButtonAndLabelSpace)
+            make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
+        }
     }
     
     func makeRegistrationContainer() {
         
+        registrationLabel.text = "Don't have an account?"
+        
+        registrationButton.setTitle("Sign up", for: .normal)
+        
+        configureFooterContainer(container: registrationContainer,
+                                 label: registrationLabel,
+                                 button: registrationButton)
+        
+        registrationContainer.snp.makeConstraints { make in
+            make.top.equalTo(googleLogInButton.snp.bottom).offset(Constants.footerAndButtonsSpace)
+            make.centerX.equalTo(view.snp.centerX)
+        }
     }
-
 }
 
 // MARK: - AuthViewInput

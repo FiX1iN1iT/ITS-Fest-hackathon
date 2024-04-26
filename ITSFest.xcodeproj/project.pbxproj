@@ -13,6 +13,7 @@
 		20A588CD2BDBE2FD00596EE7 /* RegistrationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588C72BDBE2FD00596EE7 /* RegistrationProtocols.swift */; };
 		20A588CE2BDBE2FD00596EE7 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588C82BDBE2FD00596EE7 /* RegistrationInteractor.swift */; };
 		20A588CF2BDBE2FD00596EE7 /* RegistrationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588C92BDBE2FD00596EE7 /* RegistrationContainer.swift */; };
+		20A588D12BDC11A000596EE7 /* AuthUIComponentsConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A588D02BDC119F00596EE7 /* AuthUIComponentsConfigurationProtocol.swift */; };
 		7465F9722BDB9CDD00CF0AE5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9712BDB9CDD00CF0AE5 /* AuthService.swift */; };
 		7465F9912BDBA35F00CF0AE5 /* ReplyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F98B2BDBA35F00CF0AE5 /* ReplyPresenter.swift */; };
 		7465F9922BDBA35F00CF0AE5 /* ReplyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F98C2BDBA35F00CF0AE5 /* ReplyRouter.swift */; };
@@ -65,6 +66,7 @@
 		20A588C72BDBE2FD00596EE7 /* RegistrationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationProtocols.swift; sourceTree = "<group>"; };
 		20A588C82BDBE2FD00596EE7 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		20A588C92BDBE2FD00596EE7 /* RegistrationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationContainer.swift; sourceTree = "<group>"; };
+		20A588D02BDC119F00596EE7 /* AuthUIComponentsConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUIComponentsConfigurationProtocol.swift; sourceTree = "<group>"; };
 		7465F9712BDB9CDD00CF0AE5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		7465F98B2BDBA35F00CF0AE5 /* ReplyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyPresenter.swift; sourceTree = "<group>"; };
 		7465F98C2BDBA35F00CF0AE5 /* ReplyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyRouter.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				7482041E2BDBD5D6005E7BF2 /* Registration */,
 				7482041F2BDBD5E7005E7BF2 /* Authorization */,
+				20A588D02BDC119F00596EE7 /* AuthUIComponentsConfigurationProtocol.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				7465F9A22BDBA36E00CF0AE5 /* FeedContainer.swift in Sources */,
 				7465F9962BDBA35F00CF0AE5 /* ReplyContainer.swift in Sources */,
 				7465F99F2BDBA36E00CF0AE5 /* FeedViewController.swift in Sources */,
+				20A588D12BDC11A000596EE7 /* AuthUIComponentsConfigurationProtocol.swift in Sources */,
 				7465F9942BDBA35F00CF0AE5 /* ReplyProtocols.swift in Sources */,
 				7465F99D2BDBA36E00CF0AE5 /* FeedPresenter.swift in Sources */,
 				7482041B2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift in Sources */,
