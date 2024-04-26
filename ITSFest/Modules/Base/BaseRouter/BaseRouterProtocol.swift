@@ -9,7 +9,7 @@ import UIKit
 
 protocol BaseSwiftRouterInput {
     
-    func openModuleFromWindow(window: UIWindow?)
-    func openModuleFromViewController(sourseView: UIViewController)
+    func openModuleFromWindow(window: UIWindow?, navigationController: UINavigationController?)
+    func openModuleFromViewController(sourсeView: UIViewController)
     func closeModule()
 }
