@@ -122,16 +122,17 @@ private extension RegistrationViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        button.snp.makeConstraints { make in
-            make.top.equalTo(containerView.snp.top)
-            make.left.equalTo(containerView.snp.left)
-        }
-        
         label.snp.makeConstraints { make in
             make.top.equalTo(containerView.snp.top)
-            make.left.equalTo(containerView.snp.left).offset(30)
             make.bottom.equalTo(containerView.snp.bottom)
+            make.left.equalTo(containerView.snp.left).offset(30)
             make.right.equalToSuperview()
+            make.height.equalTo(50)
+        }
+        
+        button.snp.makeConstraints { make in
+            make.centerY.equalTo(label.snp.centerY)
+            make.left.equalTo(containerView.snp.left)
         }
     }
     
@@ -199,7 +200,7 @@ private extension RegistrationViewController {
         
         let attributedString = NSMutableAttributedString(string: "I have read & agreed to DayTask Privacy Policy, Terms & Condition")
         attributedString.addAttribute(.link, value: "https://www.vk.com", range: NSRange(location: 32, length: 33))
-
+        privacyLable.backgroundColor = .clear
         privacyLable.attributedText = attributedString
         
         configureCheckboxContainer(containerView: checkboxContainer,
@@ -207,9 +208,9 @@ private extension RegistrationViewController {
                                    button: checkboxButton)
         
         checkboxContainer.snp.makeConstraints { make in
-            make.top.equalTo(passwordContainer.snp.bottom).offset(Constants.textFieldContainersSpace)
+            make.top.equalTo(passwordContainer.snp.bottom)
             make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
-            make.height.equalTo(35)
+//            make.height.equalTo(35)
         }
         
     }
@@ -221,7 +222,7 @@ private extension RegistrationViewController {
         
         logInButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
-            make.top.equalTo(passwordContainer.snp.bottom).offset(Constants.textFieldsAndLogInButtonsSpace)
+            make.top.equalTo(checkboxContainer.snp.bottom)
         }
     }
     
@@ -266,10 +267,11 @@ private extension RegistrationViewController {
             make.centerX.equalTo(view.snp.centerX)
         }
     }
-    
-    
 
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+    func textView(_ textView: UITextView, 
+                  shouldInteractWith URL: URL,
+                  in characterRange: NSRange,
+                  interaction: UITextItemInteraction) -> Bool {
         UIApplication.shared.open(URL)
         return false
     }
