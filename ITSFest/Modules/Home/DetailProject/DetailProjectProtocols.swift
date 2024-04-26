@@ -27,5 +27,5 @@ protocol DetailProjectInteractorInput: AnyObject {
 protocol DetailProjectInteractorOutput: AnyObject {
 }
 
-protocol DetailProjectRouterInput: AnyObject {
+protocol DetailProjectRouterInput: AnyObject, BaseSwiftRouterInput {
 }

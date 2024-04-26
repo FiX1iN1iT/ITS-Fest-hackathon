@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        let authFlow = AuthContainer.assemble()
+        let detailFlow = DetailProjectContainer.assemble(with: nil)
         
-        authFlow.router.openModuleFromWindow(window: window)
+        detailFlow.router.openModuleFromWindow(window: window)
     }
 }
