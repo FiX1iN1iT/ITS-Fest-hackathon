@@ -22,7 +22,10 @@ final class TabBarViewController: UITabBarController {
         let firstViewController = ViewController()
         let secondViewController = ViewController()
         let thirdViewController = ViewController()
-        let forthViewController = ViewController()
+        
+        let calendarContainer = CalendarContainer.assemble(with: .init())
+        let calendarViewController = calendarContainer.viewController
+        
         let fifthViewController = ViewController()
 
         let first = self.createNavigation(
@@ -40,10 +43,10 @@ final class TabBarViewController: UITabBarController {
             and: UIImage(systemName: "star.fill"),
             vc: thirdViewController
         )
-        let forth = self.createNavigation(
-            with: Texts.tabBarFavourite,
-            and: UIImage(systemName: "star.fill"),
-            vc: forthViewController
+        let calendar = self.createNavigation(
+            with: Texts.tabBarCalendar,
+            and: UIImage(systemName: "calendar"),
+            vc: calendarViewController
         )
         let fifth = self.createNavigation(
             with: Texts.tabBarFavourite,
@@ -57,7 +60,7 @@ final class TabBarViewController: UITabBarController {
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         UITabBar.appearance().standardAppearance = tabBarAppearance
 
-        self.setViewControllers([first, second, third, forth, fifth], animated: true)
+        self.setViewControllers([first, second, third, calendar, fifth], animated: true)
     }
     
     // MARK: - Helpers
@@ -79,5 +82,6 @@ private extension TabBarViewController {
         static let tabBarMain = String(localized: "First")
         static let tabBarAccount = String(localized: "Second")
         static let tabBarFavourite = String(localized: "Third")
+        static let tabBarCalendar = String(localized: "Calendar")
     }
 }

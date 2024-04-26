@@ -25,7 +25,21 @@ extension CalendarPresenter: CalendarModuleInput {
 }
 
 extension CalendarPresenter: CalendarViewOutput {
+    func didLoadView() {
+        print(#function)
+    }
 }
 
 extension CalendarPresenter: CalendarInteractorOutput {
+    func didLoadDay(with tasks: [String]) {
+        print(#function)
+    }
+    
+    func didStartLoading() {
+        print(#function)
+    }
+    
+    func didEndLoading() {
+        print(#function)
+    }
 }

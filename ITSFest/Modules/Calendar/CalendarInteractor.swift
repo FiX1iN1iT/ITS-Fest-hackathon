@@ -13,4 +13,7 @@ final class CalendarInteractor {
 }
 
 extension CalendarInteractor: CalendarInteractorInput {
+    func loadDay(_ date: Date) {
+        print(#function)
+    }
 }

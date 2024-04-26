@@ -12,4 +12,7 @@ final class CalendarRouter {
 }
 
 extension CalendarRouter: CalendarRouterInput {
+    func openTask() {
+        print(#function)
+    }
 }
