@@ -17,7 +17,9 @@ class BaseSwiftRouter: BaseSwiftRouterInput {
         window.makeKeyAndVisible()
     }
     
-    func openModuleFromViewController(sourseView: UIViewController) {
+    func openModuleFromViewController(sourseView: UIViewController?, openView: UIViewController) {
+        print(#function)
+        sourseView?.navigationController?.pushViewController(openView, animated: true)
     }
     
     func closeModule() {

@@ -16,10 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        window = UIWindow(windowScene: windowScene)
-        
-        let authFlow = AuthContainer.assemble()
-        
-        authFlow.router.openModuleFromWindow(window: window)
+        let viewController = SplashAssembly.assembly()
+        let navigationController = UINavigationController(rootViewController: viewController)
+
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
 }
