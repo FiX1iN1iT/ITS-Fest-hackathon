@@ -29,6 +29,12 @@
 		748204192BDBC637005E7BF2 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204182BDBC637005E7BF2 /* FlowCoordinator.swift */; };
 		7482041B2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482041A2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift */; };
 		7482041D2BDBCB01005E7BF2 /* UIColor + HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482041C2BDBCB01005E7BF2 /* UIColor + HEX.swift */; };
+		748204212BDBE6FE005E7BF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 748204202BDBE6FE005E7BF2 /* GoogleService-Info.plist */; };
+		748204242BDBE763005E7BF2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 748204232BDBE763005E7BF2 /* FirebaseAnalytics */; };
+		748204262BDBE763005E7BF2 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 748204252BDBE763005E7BF2 /* FirebaseAnalyticsOnDeviceConversion */; };
+		748204282BDBE763005E7BF2 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 748204272BDBE763005E7BF2 /* FirebaseAnalyticsSwift */; };
+		7482042A2BDBE763005E7BF2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 748204292BDBE763005E7BF2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		7482042C2BDBE763005E7BF2 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 7482042B2BDBE763005E7BF2 /* FirebaseAppCheck */; };
 		9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1402BDBABA000BFDFF8 /* SnapKit */; };
 		9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
@@ -66,6 +72,7 @@
 		748204182BDBC637005E7BF2 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		7482041A2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		7482041C2BDBCB01005E7BF2 /* UIColor + HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + HEX.swift"; sourceTree = "<group>"; };
+		748204202BDBE6FE005E7BF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9DB778CF2BDABDE7001C3B34 /* ITSFest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITSFest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +93,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */,
+				7482042A2BDBE763005E7BF2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */,
+				748204242BDBE763005E7BF2 /* FirebaseAnalytics in Frameworks */,
+				7482042C2BDBE763005E7BF2 /* FirebaseAppCheck in Frameworks */,
+				748204262BDBE763005E7BF2 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				748204282BDBE763005E7BF2 /* FirebaseAnalyticsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +193,7 @@
 				9DB778F52BDADFF7001C3B34 /* Modules */,
 				9DB778F42BDADF94001C3B34 /* Support */,
 				9DB778E02BDABDE9001C3B34 /* Info.plist */,
+				748204202BDBE6FE005E7BF2 /* GoogleService-Info.plist */,
 			);
 			path = ITSFest;
 			sourceTree = "<group>";
@@ -280,6 +293,11 @@
 			packageProductDependencies = (
 				9D65C1402BDBABA000BFDFF8 /* SnapKit */,
 				9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */,
+				748204232BDBE763005E7BF2 /* FirebaseAnalytics */,
+				748204252BDBE763005E7BF2 /* FirebaseAnalyticsOnDeviceConversion */,
+				748204272BDBE763005E7BF2 /* FirebaseAnalyticsSwift */,
+				748204292BDBE763005E7BF2 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				7482042B2BDBE763005E7BF2 /* FirebaseAppCheck */,
 			);
 			productName = ITSFest;
 			productReference = 9DB778CF2BDABDE7001C3B34 /* ITSFest.app */;
@@ -311,6 +329,7 @@
 			mainGroup = 9DB778C62BDABDE7001C3B34;
 			packageReferences = (
 				9D65C13F2BDBABA000BFDFF8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 9DB778D02BDABDE7001C3B34 /* Products */;
 			projectDirPath = "";
@@ -328,6 +347,7 @@
 			files = (
 				9DB778F92BDAE0D6001C3B34 /* Launch Screen.storyboard in Resources */,
 				9DB778DC2BDABDE9001C3B34 /* Assets.xcassets in Resources */,
+				748204212BDBE6FE005E7BF2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +520,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LW5X22QCW4;
+				DEVELOPMENT_TEAM = 3Z9M2C83TD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ITSFest/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = todoApp;
@@ -534,7 +554,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LW5X22QCW4;
+				DEVELOPMENT_TEAM = 3Z9M2C83TD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ITSFest/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = todoApp;
@@ -585,6 +605,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.24.0;
+			};
+		};
 		9D65C13F2BDBABA000BFDFF8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -596,6 +624,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		748204232BDBE763005E7BF2 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		748204252BDBE763005E7BF2 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		748204272BDBE763005E7BF2 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		748204292BDBE763005E7BF2 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		7482042B2BDBE763005E7BF2 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
 		9D65C1402BDBABA000BFDFF8 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9D65C13F2BDBABA000BFDFF8 /* XCRemoteSwiftPackageReference "SnapKit" */;
