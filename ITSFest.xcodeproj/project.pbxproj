@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7465F9722BDB9CDD00CF0AE5 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9712BDB9CDD00CF0AE5 /* Service.swift */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
 		9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */; };
 		9DB778D72BDABDE7001C3B34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D62BDABDE7001C3B34 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7465F9712BDB9CDD00CF0AE5 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9DB778CF2BDABDE7001C3B34 /* ITSFest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITSFest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7465F9702BDB9CB700CF0AE5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7465F9712BDB9CDD00CF0AE5 /* Service.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		9DB778C62BDABDE7001C3B34 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 				9DB778FD2BDB12C3001C3B34 /* Calendar */,
 				9DB778FE2BDB12C7001C3B34 /* Notification */,
 				9DB778F62BDADFFD001C3B34 /* TabBar */,
+				7465F9702BDB9CB700CF0AE5 /* Base */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -223,6 +234,7 @@
 				9DB778F32BDADCFA001C3B34 /* TabBarController.swift in Sources */,
 				9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */,
 				9DB779082BDB1576001C3B34 /* CalendarViewController.swift in Sources */,
+				7465F9722BDB9CDD00CF0AE5 /* Service.swift in Sources */,
 				9DB779022BDB153C001C3B34 /* ChatViewController.swift in Sources */,
 				9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */,
 			);
