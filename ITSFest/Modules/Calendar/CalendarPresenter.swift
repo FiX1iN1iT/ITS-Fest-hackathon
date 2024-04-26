@@ -35,6 +35,10 @@ extension CalendarPresenter: CalendarViewOutput {
         interactor.loadDay(date)
     }
     
+    func didTapTask(at index: Int) {
+        router.openTask()
+    }
+    
     func numberOfSections() -> Int {
         tasks.count
     }

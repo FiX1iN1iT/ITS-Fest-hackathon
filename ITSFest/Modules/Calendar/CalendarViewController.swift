@@ -106,6 +106,7 @@ extension CalendarViewController: WeeklyCalendarViewControllerDelegate {
 
 extension CalendarViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        output.didTapTask(at: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

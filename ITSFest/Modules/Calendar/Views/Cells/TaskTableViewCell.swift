@@ -12,7 +12,7 @@ final class TaskTableViewCell: UITableViewCell {
     static let reuseID = "TaskTableViewCell"
     
     private let titleLabel = UILabel()
-    private let timeIntervalLabel = UILabel()
+    private let timeLabel = UILabel()
     private let backgroundIndicatorView = UIView()
     private let profilesView = UIView()  // create custom view with collection view
     
@@ -32,7 +32,7 @@ final class TaskTableViewCell: UITableViewCell {
     
     func configure(with viewModel: TaskTableViewCellViewModel) {
         titleLabel.attributedText = viewModel.title
-        timeIntervalLabel.attributedText = viewModel.timeInterval
+        timeLabel.attributedText = viewModel.time
     }
 }
 
@@ -75,7 +75,7 @@ private extension TaskTableViewCell {
         verticalStackView.axis = .vertical
         verticalStackView.distribution = .fillEqually
         verticalStackView.addArrangedSubview(titleLabel)
-        verticalStackView.addArrangedSubview(timeIntervalLabel)
+        verticalStackView.addArrangedSubview(timeLabel)
         
         let horizontalStackView = UIStackView()
         horizontalStackView.axis = .horizontal

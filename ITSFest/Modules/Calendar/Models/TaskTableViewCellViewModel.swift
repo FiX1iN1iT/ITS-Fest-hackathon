@@ -9,16 +9,16 @@ import UIKit
 
 struct TaskTableViewCellViewModel {
     let title: NSAttributedString
-    let timeInterval: NSAttributedString
+    let time: NSAttributedString
     
     init(task: Task) {
         let titleLabelTitle = task.title
         let titleLabelAttributedString = NSAttributedString(string: titleLabelTitle, attributes: Styles.titleAttributes)
-        let timeIntervalLabelTitle = task.timeInterval.formattedInterval()
-        let timeIntervalLabelAttributedString = NSAttributedString(string: timeIntervalLabelTitle, attributes: Styles.timeIntervalLabelTitleAttributes)
+        let timeLabelTitle = task.time.formattedInterval()
+        let timeLabelAttributedString = NSAttributedString(string: timeLabelTitle, attributes: Styles.timeLabelTitleAttributes)
         
         title = titleLabelAttributedString
-        timeInterval = timeIntervalLabelAttributedString
+        time = timeLabelAttributedString
     }
 }
 
@@ -29,7 +29,7 @@ private extension TaskTableViewCellViewModel {
             .font: UIFont.systemFont(ofSize: 16, weight: .semibold)
         ]
         
-        static let timeIntervalLabelTitleAttributes: [NSAttributedString.Key: Any] = [
+        static let timeLabelTitleAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.secondaryLabel,
             .font: UIFont.systemFont(ofSize: 12, weight: .bold)
         ]

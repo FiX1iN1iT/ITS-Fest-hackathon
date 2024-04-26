@@ -53,14 +53,9 @@ private extension WeeklyCalendarViewController {
     }
     
     func setupMonthLabel() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Constants.MonthLabel.dateFormat
-        
-        let currentDate = dateFormatter.string(from: Date())
-        
-        monthLabel.text = currentDate
         monthLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         monthLabel.textColor = .label
+        configureMonthLabel()
         
         view.addSubview(monthLabel)
         monthLabel.snp.makeConstraints { make in
@@ -87,8 +82,8 @@ private extension WeeklyCalendarViewController {
                 return
             }
             
-            let indexPath = IndexPath(item: 2, section: 0)
-            weekCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            let indexPath = IndexPath(item: calendar.count / 2, section: 0)
+            weekCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
         }
         
         view.addSubview(weekCollectionView)
@@ -101,11 +96,11 @@ private extension WeeklyCalendarViewController {
     
     // MARK: - Helpers
     
-    func fetchWeeklyCalendar() -> [[Date]] {
+    func fetchWeeklyCalendar(for date: Date = Date()) -> [[Date]] {
         let calendar = Calendar.current
         guard
-            let startDate = calendar.date(byAdding: .day, value: -14, to: Date()),
-            let endDate = calendar.date(byAdding: .day, value: 14, to: Date()),
+            let startDate = calendar.date(byAdding: .year, value: -1, to: date),
+            let endDate = calendar.date(byAdding: .year, value: 1, to: date),
             let startWeek = calendar.dateInterval(of: .weekOfMonth, for: startDate),
             let endWeek = calendar.dateInterval(of: .weekOfMonth, for: endDate)
         else {
@@ -145,10 +140,17 @@ private extension WeeklyCalendarViewController {
         return dateArray
     }
     
+    func configureMonthLabel(with date: Date = Date()) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Constants.MonthLabel.dateFormat
+        let monthText = dateFormatter.string(from: date)
+        monthLabel.text = monthText
+    }
+    
     // MARK: - Init
     
     func initProperties() {
-        let outerIndexPath = IndexPath(item: 2, section: 0)
+        let outerIndexPath = IndexPath(item: calendar.count / 2, section: 0)
         let innerIndex = CalendarService.shared.getWeekdayIndex(from: Date())
         let innerIndexPath = IndexPath(item: innerIndex, section: 0)
         selectedCell = (outerIndexPath, innerIndexPath)
@@ -207,6 +209,14 @@ extension WeeklyCalendarViewController: UICollectionViewDelegate {
         {
             selectedCell = (indexPath, innerIndexPath)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let date = calendar[indexPath.item].first else {
+            return
+        }
+        
+        configureMonthLabel(with: date)
     }
 }
 
