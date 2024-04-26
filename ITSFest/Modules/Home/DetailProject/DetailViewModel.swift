@@ -14,3 +14,8 @@ struct DetailViewModel {
     let projTasks: [String]
     let projTeam: String
 }
+
+struct Task {
+    let title: String
+    let isCompleted: Bool
+}

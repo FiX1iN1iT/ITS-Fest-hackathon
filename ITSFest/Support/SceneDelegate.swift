@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let detailFlow = DetailProjectContainer.assemble(with: nil)
+        let navigationController = UINavigationController()
         
-        detailFlow.router.openModuleFromWindow(window: window)
+        detailFlow.router.openModuleFromWindow(window: window, navigationController: navigationController)
     }
 }
