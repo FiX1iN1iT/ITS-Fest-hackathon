@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7465F9722BDB9CDD00CF0AE5 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9712BDB9CDD00CF0AE5 /* Service.swift */; };
+		7465F9722BDB9CDD00CF0AE5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9712BDB9CDD00CF0AE5 /* AuthService.swift */; };
 		7465F9912BDBA35F00CF0AE5 /* ReplyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F98B2BDBA35F00CF0AE5 /* ReplyPresenter.swift */; };
 		7465F9922BDBA35F00CF0AE5 /* ReplyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F98C2BDBA35F00CF0AE5 /* ReplyRouter.swift */; };
 		7465F9932BDBA35F00CF0AE5 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F98D2BDBA35F00CF0AE5 /* ReplyViewController.swift */; };
@@ -35,6 +35,8 @@
 		748204282BDBE763005E7BF2 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 748204272BDBE763005E7BF2 /* FirebaseAnalyticsSwift */; };
 		7482042A2BDBE763005E7BF2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 748204292BDBE763005E7BF2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		7482042C2BDBE763005E7BF2 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 7482042B2BDBE763005E7BF2 /* FirebaseAppCheck */; };
+		7482042F2BDBEE8C005E7BF2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7482042E2BDBEE8C005E7BF2 /* FirebaseAuth */; };
+		748204312BDBEE92005E7BF2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 748204302BDBEE92005E7BF2 /* FirebaseFirestore */; };
 		9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1402BDBABA000BFDFF8 /* SnapKit */; };
 		9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
@@ -50,7 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7465F9712BDB9CDD00CF0AE5 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		7465F9712BDB9CDD00CF0AE5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		7465F98B2BDBA35F00CF0AE5 /* ReplyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyPresenter.swift; sourceTree = "<group>"; };
 		7465F98C2BDBA35F00CF0AE5 /* ReplyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyRouter.swift; sourceTree = "<group>"; };
 		7465F98D2BDBA35F00CF0AE5 /* ReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
@@ -97,8 +99,10 @@
 				9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */,
 				748204242BDBE763005E7BF2 /* FirebaseAnalytics in Frameworks */,
 				7482042C2BDBE763005E7BF2 /* FirebaseAppCheck in Frameworks */,
+				748204312BDBEE92005E7BF2 /* FirebaseFirestore in Frameworks */,
 				748204262BDBE763005E7BF2 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				748204282BDBE763005E7BF2 /* FirebaseAnalyticsSwift in Frameworks */,
+				7482042F2BDBEE8C005E7BF2 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +112,7 @@
 		7465F9702BDB9CB700CF0AE5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				7465F9712BDB9CDD00CF0AE5 /* Service.swift */,
+				7465F9712BDB9CDD00CF0AE5 /* AuthService.swift */,
 				748204182BDBC637005E7BF2 /* FlowCoordinator.swift */,
 				7482041A2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift */,
 				7482041C2BDBCB01005E7BF2 /* UIColor + HEX.swift */,
@@ -162,6 +166,13 @@
 			path = Authorization;
 			sourceTree = "<group>";
 		};
+		7482042D2BDBEE8C005E7BF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9D65C1302BDBA74500BFDFF8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +187,7 @@
 			children = (
 				9DB778D12BDABDE7001C3B34 /* ITSFest */,
 				9DB778D02BDABDE7001C3B34 /* Products */,
+				7482042D2BDBEE8C005E7BF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,6 +310,8 @@
 				748204272BDBE763005E7BF2 /* FirebaseAnalyticsSwift */,
 				748204292BDBE763005E7BF2 /* FirebaseAnalyticsWithoutAdIdSupport */,
 				7482042B2BDBE763005E7BF2 /* FirebaseAppCheck */,
+				7482042E2BDBEE8C005E7BF2 /* FirebaseAuth */,
+				748204302BDBEE92005E7BF2 /* FirebaseFirestore */,
 			);
 			productName = ITSFest;
 			productReference = 9DB778CF2BDABDE7001C3B34 /* ITSFest.app */;
@@ -386,7 +400,7 @@
 				7465F9952BDBA35F00CF0AE5 /* ReplyInteractor.swift in Sources */,
 				9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */,
 				9DB779082BDB1576001C3B34 /* CalendarViewController.swift in Sources */,
-				7465F9722BDB9CDD00CF0AE5 /* Service.swift in Sources */,
+				7465F9722BDB9CDD00CF0AE5 /* AuthService.swift in Sources */,
 				9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +662,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAppCheck;
+		};
+		7482042E2BDBEE8C005E7BF2 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		748204302BDBEE92005E7BF2 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 748204222BDBE763005E7BF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		9D65C1402BDBABA000BFDFF8 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
