@@ -48,6 +48,8 @@
 		7482045A2BDC15D3005E7BF2 /* DetailProjectProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204542BDC15D3005E7BF2 /* DetailProjectProtocols.swift */; };
 		7482045B2BDC15D3005E7BF2 /* DetailProjectInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204552BDC15D3005E7BF2 /* DetailProjectInteractor.swift */; };
 		7482045C2BDC15D3005E7BF2 /* DetailProjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204562BDC15D3005E7BF2 /* DetailProjectContainer.swift */; };
+		748204602BDC19CD005E7BF2 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482045F2BDC19CD005E7BF2 /* BaseRouter.swift */; };
+		748204632BDC19DF005E7BF2 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204622BDC19DF005E7BF2 /* BaseRouterProtocol.swift */; };
 		9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1402BDBABA000BFDFF8 /* SnapKit */; };
 		9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
@@ -96,6 +98,8 @@
 		748204542BDC15D3005E7BF2 /* DetailProjectProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectProtocols.swift; sourceTree = "<group>"; };
 		748204552BDC15D3005E7BF2 /* DetailProjectInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectInteractor.swift; sourceTree = "<group>"; };
 		748204562BDC15D3005E7BF2 /* DetailProjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectContainer.swift; sourceTree = "<group>"; };
+		7482045F2BDC19CD005E7BF2 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		748204622BDC19DF005E7BF2 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
 		9DB778CF2BDABDE7001C3B34 /* ITSFest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITSFest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			children = (
 				748204342BDBF916005E7BF2 /* AuthorizationService */,
 				7482045E2BDC1692005E7BF2 /* Extensions */,
+				748204612BDC19D1005E7BF2 /* BaseRouter */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -225,6 +230,15 @@
 				7482041C2BDBCB01005E7BF2 /* UIColor + HEX.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		748204612BDC19D1005E7BF2 /* BaseRouter */ = {
+			isa = PBXGroup;
+			children = (
+				7482045F2BDC19CD005E7BF2 /* BaseRouter.swift */,
+				748204622BDC19DF005E7BF2 /* BaseRouterProtocol.swift */,
+			);
+			path = BaseRouter;
 			sourceTree = "<group>";
 		};
 		9D65C1302BDBA74500BFDFF8 /* Auth */ = {
@@ -434,6 +448,7 @@
 				9DB778D72BDABDE7001C3B34 /* ViewController.swift in Sources */,
 				20A588CA2BDBE2FD00596EE7 /* RegistrationPresenter.swift in Sources */,
 				7465F9B52BDBC21300CF0AE5 /* AuthViewController.swift in Sources */,
+				748204602BDC19CD005E7BF2 /* BaseRouter.swift in Sources */,
 				7482041D2BDBCB01005E7BF2 /* UIColor + HEX.swift in Sources */,
 				9DB779062BDB1554001C3B34 /* NotificationViewController.swift in Sources */,
 				7465F9912BDBA35F00CF0AE5 /* ReplyPresenter.swift in Sources */,
@@ -462,6 +477,7 @@
 				7465F9B42BDBC21300CF0AE5 /* AuthRouter.swift in Sources */,
 				7465F9952BDBA35F00CF0AE5 /* ReplyInteractor.swift in Sources */,
 				9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */,
+				748204632BDC19DF005E7BF2 /* BaseRouterProtocol.swift in Sources */,
 				9DB779082BDB1576001C3B34 /* CalendarViewController.swift in Sources */,
 				7465F9722BDB9CDD00CF0AE5 /* AuthService.swift in Sources */,
 				7482045A2BDC15D3005E7BF2 /* DetailProjectProtocols.swift in Sources */,

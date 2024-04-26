@@ -27,5 +27,5 @@ protocol AuthInteractorInput: AnyObject {
 protocol AuthInteractorOutput: AnyObject {
 }
 
-protocol AuthRouterInput: AnyObject {
+protocol AuthRouterInput: AnyObject, BaseSwiftRouterInput {
 }

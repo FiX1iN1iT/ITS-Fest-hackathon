@@ -23,6 +23,8 @@ final class AuthContainer { // DI - контрукторный тип
         
         interactor.output = presenter
         
+        router.view = viewController
+        
         return AuthContainer(view: viewController, input: presenter, router: router)
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AuthRouter {
+final class AuthRouter: BaseSwiftRouter {
 }
 
 extension AuthRouter: AuthRouterInput {

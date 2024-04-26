@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         window = UIWindow(windowScene: windowScene)
-//        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+        
+        let authFlow = AuthContainer.assemble()
+        
+        authFlow.router.openModuleFromWindow(window: window)
     }
 }
