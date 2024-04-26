@@ -20,7 +20,12 @@
 		7465F9A02BDBA36E00CF0AE5 /* FeedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F99A2BDBA36E00CF0AE5 /* FeedProtocols.swift */; };
 		7465F9A12BDBA36E00CF0AE5 /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F99B2BDBA36E00CF0AE5 /* FeedInteractor.swift */; };
 		7465F9A22BDBA36E00CF0AE5 /* FeedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F99C2BDBA36E00CF0AE5 /* FeedContainer.swift */; };
-		9D65C1322BDBA7B200BFDFF8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C1312BDBA7B200BFDFF8 /* AuthViewController.swift */; };
+		7465F9B32BDBC21300CF0AE5 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9AD2BDBC21300CF0AE5 /* AuthPresenter.swift */; };
+		7465F9B42BDBC21300CF0AE5 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9AE2BDBC21300CF0AE5 /* AuthRouter.swift */; };
+		7465F9B52BDBC21300CF0AE5 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9AF2BDBC21300CF0AE5 /* AuthViewController.swift */; };
+		7465F9B62BDBC21300CF0AE5 /* AuthProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9B02BDBC21300CF0AE5 /* AuthProtocols.swift */; };
+		7465F9B72BDBC21300CF0AE5 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9B12BDBC21300CF0AE5 /* AuthInteractor.swift */; };
+		7465F9B82BDBC21300CF0AE5 /* AuthContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7465F9B22BDBC21300CF0AE5 /* AuthContainer.swift */; };
 		9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1402BDBABA000BFDFF8 /* SnapKit */; };
 		9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
@@ -49,7 +54,12 @@
 		7465F99A2BDBA36E00CF0AE5 /* FeedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProtocols.swift; sourceTree = "<group>"; };
 		7465F99B2BDBA36E00CF0AE5 /* FeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInteractor.swift; sourceTree = "<group>"; };
 		7465F99C2BDBA36E00CF0AE5 /* FeedContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContainer.swift; sourceTree = "<group>"; };
-		9D65C1312BDBA7B200BFDFF8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		7465F9AD2BDBC21300CF0AE5 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		7465F9AE2BDBC21300CF0AE5 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		7465F9AF2BDBC21300CF0AE5 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		7465F9B02BDBC21300CF0AE5 /* AuthProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocols.swift; sourceTree = "<group>"; };
+		7465F9B12BDBC21300CF0AE5 /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
+		7465F9B22BDBC21300CF0AE5 /* AuthContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthContainer.swift; sourceTree = "<group>"; };
 		9DB778CF2BDABDE7001C3B34 /* ITSFest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITSFest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +124,12 @@
 		9D65C1302BDBA74500BFDFF8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				9D65C1312BDBA7B200BFDFF8 /* AuthViewController.swift */,
+				7465F9AD2BDBC21300CF0AE5 /* AuthPresenter.swift */,
+				7465F9AE2BDBC21300CF0AE5 /* AuthRouter.swift */,
+				7465F9AF2BDBC21300CF0AE5 /* AuthViewController.swift */,
+				7465F9B02BDBC21300CF0AE5 /* AuthProtocols.swift */,
+				7465F9B12BDBC21300CF0AE5 /* AuthInteractor.swift */,
+				7465F9B22BDBC21300CF0AE5 /* AuthContainer.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -299,13 +314,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7465F9A02BDBA36E00CF0AE5 /* FeedProtocols.swift in Sources */,
-				9D65C1322BDBA7B200BFDFF8 /* AuthViewController.swift in Sources */,
 				9DB779002BDB151F001C3B34 /* HomeViewController.swift in Sources */,
 				7465F9922BDBA35F00CF0AE5 /* ReplyRouter.swift in Sources */,
 				9DB778D72BDABDE7001C3B34 /* ViewController.swift in Sources */,
+				7465F9B52BDBC21300CF0AE5 /* AuthViewController.swift in Sources */,
 				9DB779062BDB1554001C3B34 /* NotificationViewController.swift in Sources */,
 				7465F9912BDBA35F00CF0AE5 /* ReplyPresenter.swift in Sources */,
 				7465F9A12BDBA36E00CF0AE5 /* FeedInteractor.swift in Sources */,
+				7465F9B82BDBC21300CF0AE5 /* AuthContainer.swift in Sources */,
+				7465F9B62BDBC21300CF0AE5 /* AuthProtocols.swift in Sources */,
 				9DB779042BDB1549001C3B34 /* CreateViewController.swift in Sources */,
 				7465F99E2BDBA36E00CF0AE5 /* FeedRouter.swift in Sources */,
 				9DB778F32BDADCFA001C3B34 /* TabBarController.swift in Sources */,
@@ -315,6 +332,9 @@
 				7465F99F2BDBA36E00CF0AE5 /* FeedViewController.swift in Sources */,
 				7465F9942BDBA35F00CF0AE5 /* ReplyProtocols.swift in Sources */,
 				7465F99D2BDBA36E00CF0AE5 /* FeedPresenter.swift in Sources */,
+				7465F9B72BDBC21300CF0AE5 /* AuthInteractor.swift in Sources */,
+				7465F9B32BDBC21300CF0AE5 /* AuthPresenter.swift in Sources */,
+				7465F9B42BDBC21300CF0AE5 /* AuthRouter.swift in Sources */,
 				7465F9952BDBA35F00CF0AE5 /* ReplyInteractor.swift in Sources */,
 				9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */,
 				9DB779082BDB1576001C3B34 /* CalendarViewController.swift in Sources */,
@@ -461,6 +481,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,6 +515,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
