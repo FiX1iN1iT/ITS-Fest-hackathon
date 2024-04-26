@@ -27,6 +27,8 @@
 		9D65C13C2BDBA9F400BFDFF8 /* CalendarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C1362BDBA9F400BFDFF8 /* CalendarProtocols.swift */; };
 		9D65C13D2BDBA9F400BFDFF8 /* CalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C1372BDBA9F400BFDFF8 /* CalendarInteractor.swift */; };
 		9D65C13E2BDBA9F400BFDFF8 /* CalendarContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C1382BDBA9F400BFDFF8 /* CalendarContainer.swift */; };
+		9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1402BDBABA000BFDFF8 /* SnapKit */; };
+		9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
 		9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */; };
 		9DB778D72BDABDE7001C3B34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D62BDABDE7001C3B34 /* ViewController.swift */; };
@@ -77,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */,
+				9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +252,10 @@
 			dependencies = (
 			);
 			name = ITSFest;
+			packageProductDependencies = (
+				9D65C1402BDBABA000BFDFF8 /* SnapKit */,
+				9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */,
+			);
 			productName = ITSFest;
 			productReference = 9DB778CF2BDABDE7001C3B34 /* ITSFest.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +284,9 @@
 				Base,
 			);
 			mainGroup = 9DB778C62BDABDE7001C3B34;
+			packageReferences = (
+				9D65C13F2BDBABA000BFDFF8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 9DB778D02BDABDE7001C3B34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -542,6 +553,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9D65C13F2BDBABA000BFDFF8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9D65C1402BDBABA000BFDFF8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D65C13F2BDBABA000BFDFF8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D65C13F2BDBABA000BFDFF8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9DB778C72BDABDE7001C3B34 /* Project object */;
 }
