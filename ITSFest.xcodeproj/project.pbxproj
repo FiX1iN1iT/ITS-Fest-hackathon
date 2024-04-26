@@ -51,6 +51,8 @@
 		7482045C2BDC15D3005E7BF2 /* DetailProjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204562BDC15D3005E7BF2 /* DetailProjectContainer.swift */; };
 		748204602BDC19CD005E7BF2 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482045F2BDC19CD005E7BF2 /* BaseRouter.swift */; };
 		748204632BDC19DF005E7BF2 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204622BDC19DF005E7BF2 /* BaseRouterProtocol.swift */; };
+		748204652BDC1E7C005E7BF2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204642BDC1E7C005E7BF2 /* DetailViewModel.swift */; };
+		748204672BDC614B005E7BF2 /* DetailProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204662BDC614B005E7BF2 /* DetailProjectCell.swift */; };
 		9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1402BDBABA000BFDFF8 /* SnapKit */; };
 		9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
@@ -102,6 +104,8 @@
 		748204562BDC15D3005E7BF2 /* DetailProjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectContainer.swift; sourceTree = "<group>"; };
 		7482045F2BDC19CD005E7BF2 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		748204622BDC19DF005E7BF2 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
+		748204642BDC1E7C005E7BF2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		748204662BDC614B005E7BF2 /* DetailProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectCell.swift; sourceTree = "<group>"; };
 		9DB778CF2BDABDE7001C3B34 /* ITSFest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITSFest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				748204542BDC15D3005E7BF2 /* DetailProjectProtocols.swift */,
 				748204552BDC15D3005E7BF2 /* DetailProjectInteractor.swift */,
 				748204562BDC15D3005E7BF2 /* DetailProjectContainer.swift */,
+				748204642BDC1E7C005E7BF2 /* DetailViewModel.swift */,
+				748204662BDC614B005E7BF2 /* DetailProjectCell.swift */,
 			);
 			path = DetailProject;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 			files = (
 				20A588CD2BDBE2FD00596EE7 /* RegistrationProtocols.swift in Sources */,
 				7465F9A02BDBA36E00CF0AE5 /* FeedProtocols.swift in Sources */,
+				748204652BDC1E7C005E7BF2 /* DetailViewModel.swift in Sources */,
 				7465F9922BDBA35F00CF0AE5 /* ReplyRouter.swift in Sources */,
 				20A588CC2BDBE2FD00596EE7 /* RegistrationViewController.swift in Sources */,
 				748204332BDBF8ED005E7BF2 /* AuthModel.swift in Sources */,
@@ -483,6 +490,7 @@
 				9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */,
 				748204632BDC19DF005E7BF2 /* BaseRouterProtocol.swift in Sources */,
 				9DB779082BDB1576001C3B34 /* CalendarViewController.swift in Sources */,
+				748204672BDC614B005E7BF2 /* DetailProjectCell.swift in Sources */,
 				7465F9722BDB9CDD00CF0AE5 /* AuthService.swift in Sources */,
 				7482045A2BDC15D3005E7BF2 /* DetailProjectProtocols.swift in Sources */,
 				9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */,

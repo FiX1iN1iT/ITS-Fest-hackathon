@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DetailProjectRouter {
+final class DetailProjectRouter: BaseSwiftRouter {
 }
 
 extension DetailProjectRouter: DetailProjectRouterInput {

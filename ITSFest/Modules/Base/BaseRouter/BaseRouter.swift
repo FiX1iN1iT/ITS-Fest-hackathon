@@ -11,14 +11,21 @@ class BaseSwiftRouter: BaseSwiftRouterInput {
     
     weak var view: UIViewController?
     
-    func openModuleFromWindow(window: UIWindow?) {
+    func openModuleFromWindow(window: UIWindow?, navigationController: UINavigationController?) {
         guard let window = window else { return }
-        window.rootViewController = self.view
+        guard let navigationController = navigationController else {
+            window.rootViewController = self.view
+            window.makeKeyAndVisible()
+            return
+        }
+        
+        #warning("Поправить")
+        navigationController.pushViewController(self.view!, animated: true)
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
     
-    func openModuleFromViewController(sourseView: UIViewController) {
-        self.view?.present(sourseView, animated: true)
+    func openModuleFromViewController(sourсeView sourseView: UIViewController) {
     }
     
     func closeModule() {

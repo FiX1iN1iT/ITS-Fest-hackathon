@@ -13,16 +13,18 @@ final class DetailProjectContainer {
     let viewController: UIViewController
     private(set) weak var router: DetailProjectRouterInput!
     
-    class func assemble(with context: DetailProjectContext) -> DetailProjectContainer {
+    class func assemble(with context: DetailProjectContext?) -> DetailProjectContainer {
         let router = DetailProjectRouter()
         let interactor = DetailProjectInteractor()
         let presenter = DetailProjectPresenter(router: router, interactor: interactor)
         let viewController = DetailProjectViewController(output: presenter)
         
         presenter.view = viewController
-        presenter.moduleOutput = context.moduleOutput
+        presenter.moduleOutput = context?.moduleOutput
         
         interactor.output = presenter
+        
+        router.view = viewController
         
         return DetailProjectContainer(view: viewController, input: presenter, router: router)
     }
