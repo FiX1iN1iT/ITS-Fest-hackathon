@@ -56,9 +56,10 @@ final class TabBarViewController: UITabBarController {
 
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
-        tabBarAppearance.backgroundColor = .white
+        tabBarAppearance.backgroundColor = UIColor.accentBackgroundColor
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         UITabBar.appearance().standardAppearance = tabBarAppearance
+        UITabBar.appearance().tintColor = UIColor.accentColor
 
         self.setViewControllers([first, second, third, calendar, fifth], animated: true)
     }

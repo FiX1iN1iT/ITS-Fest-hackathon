@@ -10,18 +10,13 @@ import Foundation
 
 final class CalendarInteractor {
     weak var output: CalendarInteractorOutput?
-    private let taskService: TaskServiceDescription
-
-    init(taskService: TaskServiceDescription = TaskService()) {
-        self.taskService = taskService
-    }
+    var taskService: TaskServiceDescription?
 }
 
 extension CalendarInteractor: CalendarInteractorInput {
     func loadDay(_ date: Date) {
-        print(#function)
         self.output?.didStartLoading()
-        taskService.getTasks(on: date) { [weak self] result in
+        taskService?.getTasks(on: date) { [weak self] result in
             guard let self else {
                 return
             }

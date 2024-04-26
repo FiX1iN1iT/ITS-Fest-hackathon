@@ -28,12 +28,10 @@ extension CalendarPresenter: CalendarModuleInput {
 
 extension CalendarPresenter: CalendarViewOutput {
     func didLoadView() {
-        print(#function)
         interactor.loadDay(Date())
     }
     
     func didTapDay(_ date: Date) {
-        print(#function)
         interactor.loadDay(date)
     }
     

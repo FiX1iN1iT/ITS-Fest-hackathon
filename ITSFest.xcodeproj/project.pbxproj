@@ -23,6 +23,7 @@
 		9D1A0AA92BDC21BE00C563B6 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A0AA82BDC21BE00C563B6 /* EmptyStateView.swift */; };
 		9D1A0AAC2BDC221E00C563B6 /* EmptyStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A0AAB2BDC221E00C563B6 /* EmptyStateViewModel.swift */; };
 		9D1A0AAF2BDC257C00C563B6 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A0AAE2BDC257C00C563B6 /* TaskService.swift */; };
+		9D1A0AB22BDC37EB00C563B6 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A0AB12BDC37EB00C563B6 /* UIColor+Ext.swift */; };
 		9D65C1322BDBA7B200BFDFF8 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C1312BDBA7B200BFDFF8 /* AuthViewController.swift */; };
 		9D65C1392BDBA9F400BFDFF8 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C1332BDBA9F400BFDFF8 /* CalendarPresenter.swift */; };
 		9D65C13A2BDBA9F400BFDFF8 /* CalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C1342BDBA9F400BFDFF8 /* CalendarRouter.swift */; };
@@ -71,6 +72,7 @@
 		9D1A0AA82BDC21BE00C563B6 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		9D1A0AAB2BDC221E00C563B6 /* EmptyStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateViewModel.swift; sourceTree = "<group>"; };
 		9D1A0AAE2BDC257C00C563B6 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		9D1A0AB12BDC37EB00C563B6 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		9D65C1312BDBA7B200BFDFF8 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		9D65C1332BDBA9F400BFDFF8 /* CalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPresenter.swift; sourceTree = "<group>"; };
 		9D65C1342BDBA9F400BFDFF8 /* CalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarRouter.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				9D65C1672BDBEB5900BFDFF8 /* DateInterval+Ext.swift */,
+				9D1A0AB12BDC37EB00C563B6 /* UIColor+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				7465F9962BDBA35F00CF0AE5 /* ReplyContainer.swift in Sources */,
 				9D1A0AA92BDC21BE00C563B6 /* EmptyStateView.swift in Sources */,
 				9D65C1392BDBA9F400BFDFF8 /* CalendarPresenter.swift in Sources */,
+				9D1A0AB22BDC37EB00C563B6 /* UIColor+Ext.swift in Sources */,
 				9D65C13A2BDBA9F400BFDFF8 /* CalendarRouter.swift in Sources */,
 				9D65C14B2BDBB25D00BFDFF8 /* WeeklyCalendarViewController.swift in Sources */,
 				9D65C13B2BDBA9F400BFDFF8 /* CalendarViewController.swift in Sources */,

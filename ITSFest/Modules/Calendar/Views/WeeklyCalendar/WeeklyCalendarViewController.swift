@@ -59,6 +59,8 @@ private extension WeeklyCalendarViewController {
         let currentDate = dateFormatter.string(from: Date())
         
         monthLabel.text = currentDate
+        monthLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        monthLabel.textColor = .label
         
         view.addSubview(monthLabel)
         monthLabel.snp.makeConstraints { make in
@@ -212,7 +214,7 @@ extension WeeklyCalendarViewController: UICollectionViewDelegate {
 
 private extension WeeklyCalendarViewController {
     struct Constants {
-        static let backgroundColor: UIColor = .clear
+        static let backgroundColor: UIColor = UIColor.backgroundColor
         
         struct WeekCollectionView {
             static let height: CGFloat = 60

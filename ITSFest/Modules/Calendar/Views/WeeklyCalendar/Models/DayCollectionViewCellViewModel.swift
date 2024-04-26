@@ -25,13 +25,13 @@ struct DayCollectionViewCellViewModel {
 private extension DayCollectionViewCellViewModel {
     struct Styles {
         static let weekdayAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.systemGray,
+            .foregroundColor: UIColor.label,
             .font: UIFont.systemFont(ofSize: 16, weight: .regular)
         ]
         
         static let dayOfMonthAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor.systemGray,
-            .font: UIFont.systemFont(ofSize: 16, weight: .regular)
+            .foregroundColor: UIColor.label,
+            .font: UIFont.systemFont(ofSize: 16, weight: .bold)
         ]
     }
     

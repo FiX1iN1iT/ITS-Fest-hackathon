@@ -31,8 +31,8 @@ final class TaskTableViewCell: UITableViewCell {
     // MARK: - Interface
     
     func configure(with viewModel: TaskTableViewCellViewModel) {
-        titleLabel.text = viewModel.title
-        timeIntervalLabel.text = viewModel.timeInterval
+        titleLabel.attributedText = viewModel.title
+        timeIntervalLabel.attributedText = viewModel.timeInterval
     }
 }
 
@@ -48,12 +48,15 @@ private extension TaskTableViewCell {
     }
     
     func setupView() {
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor.accentColor
+        selectedBackgroundView = selectedView
         backgroundColor = Constants.backgroundColor
         layer.cornerRadius = 16
     }
     
     func setupBackgroundIndicatorView() {
-        backgroundIndicatorView.backgroundColor = .systemYellow
+        backgroundIndicatorView.backgroundColor = UIColor.accentColor
         
         addSubview(backgroundIndicatorView)
         backgroundIndicatorView.snp.makeConstraints { make in
@@ -64,26 +67,19 @@ private extension TaskTableViewCell {
     }
     
     func setupProfilesView() {
-        profilesView.backgroundColor = .systemMint
+
     }
     
     func setupStackViews() {
-        
-        // MARK: - VerticalStackView
-        
         let verticalStackView = UIStackView()
         verticalStackView.axis = .vertical
-//        verticalStackView.spacing = UIConstants.yStackSpacing
+        verticalStackView.distribution = .fillEqually
         verticalStackView.addArrangedSubview(titleLabel)
         verticalStackView.addArrangedSubview(timeIntervalLabel)
-//        verticalStackView.setCustomSpacing(UIConstants.collectionViewToCardNameSpacing, after: cardNameLabel)
-        
-        // MARK: - HorizontalStackView
         
         let horizontalStackView = UIStackView()
         horizontalStackView.axis = .horizontal
         horizontalStackView.alignment = .top
-//        xStack.spacing = UIConstants.xStackSpacing
         horizontalStackView.addArrangedSubview(verticalStackView)
         horizontalStackView.addArrangedSubview(profilesView)
         profilesView.snp.makeConstraints { make in
@@ -101,6 +97,6 @@ private extension TaskTableViewCell {
 
 private extension TaskTableViewCell {
     struct Constants {
-        static let backgroundColor: UIColor = .systemGray
+        static let backgroundColor: UIColor = UIColor.accentBackgroundColor
     }
 }

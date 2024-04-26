@@ -66,6 +66,8 @@ private extension CalendarViewController {
     
     func setupTitleLabel() {
         titleLabel.text = "Today's Tasks"
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        titleLabel.textColor = UIColor.label
         
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
@@ -81,11 +83,12 @@ private extension CalendarViewController {
         tasksTableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TaskTableViewCell.reuseID)
 
         tasksTableView.sectionHeaderHeight = 0
+        tasksTableView.backgroundColor = .clear
         
         view.addSubview(tasksTableView)
         tasksTableView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(20)
-            make.top.equalTo(titleLabel.snp.bottom).inset(-20)
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom)
             make.bottom.equalToSuperview()
         }
     }
@@ -102,6 +105,9 @@ extension CalendarViewController: WeeklyCalendarViewControllerDelegate {
 // MARK: - TableViewDelegate
 
 extension CalendarViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 // MARK: - TableViewDataSource
@@ -178,7 +184,7 @@ extension CalendarViewController: CalendarViewInput {
 
 private extension CalendarViewController {
     struct Constants {
-        static let backgroundColor: UIColor = .white
+        static let backgroundColor: UIColor = UIColor.backgroundColor
         
         struct WeeklyCalendarViewController {
             static let marginTop: CGFloat = 20
