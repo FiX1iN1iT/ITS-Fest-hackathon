@@ -12,4 +12,10 @@ final class AuthRouter: BaseSwiftRouter {
 }
 
 extension AuthRouter: AuthRouterInput {
+    
+    func openRegistration() {
+        let container = RegistrationContainer.assemble(with: RegistrationContext())
+        print("asas")
+        openModuleFromViewController(sourseView: container.viewController)
+    }
 }

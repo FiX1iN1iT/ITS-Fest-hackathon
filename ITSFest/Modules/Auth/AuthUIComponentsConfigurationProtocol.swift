@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 // MARK: - Constants
 
@@ -21,8 +22,7 @@ private enum Constants {
     
     static let imageLogo = UIImage(named: "logoImage")
 
-    
-    static let logoTopOffset = 60
+    static let logoTopOffset = 10
     static let logoHeight = 100
     static let logoWidth = 150
     
@@ -66,14 +66,14 @@ extension AuthUIComponentsConfigurationProtocol {
         }
     }
     
-    func configureLogo(logo: UIImageView) {
+    func configureLogo(view: UIView, logo: UIImageView) {
         logo.image = Constants.imageLogo
         if logo.image == nil {
             print("Image not loaded")
         }
         
         logo.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(Constants.logoTopOffset)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(Constants.logoTopOffset)
             make.centerX.equalToSuperview()
             make.width.equalTo(Constants.logoWidth)
             make.height.equalTo(Constants.logoHeight)
@@ -146,6 +146,8 @@ extension AuthUIComponentsConfigurationProtocol {
             make.right.equalTo(container.snp.right)
             make.centerY.equalTo(label.snp.centerY)
             make.left.equalTo(label.snp.right).offset(5)
+            make.top.equalTo(container.snp.top)
+            make.bottom.equalTo(container.snp.bottom)
         }
     }
 }

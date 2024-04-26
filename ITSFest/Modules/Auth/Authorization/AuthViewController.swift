@@ -16,13 +16,12 @@ private enum Constants {
     static let textColor = UIColor(hex: "8CAAB9")
     
     static let horisontalOffset = 26
- 
-    static let welcomeLabelText = "Welcome Back!"
 
     static let textFieldContainersSpace = 20
     static let logInButtonAndLabelSpace = 15
     static let textFieldsAndLogInButtonsSpace = 68
     static let footerAndButtonsSpace = 20
+    static let titleLableAndTextFieldSpace = 20
 }
 
 // MARK: - AuthViewController
@@ -33,7 +32,7 @@ final class AuthViewController: UIViewController, AuthUIComponentsConfigurationP
     private let emailLabel = UILabel()
     private let passwordLabel = UILabel()
     private let logo = UIImageView()
-    private let emailtextField = UITextField()
+    private let emailTextField = UITextField()
     private let passwordTextField = UITextField()
     private let emailContainer = UIView()
     private let passwordContainer = UIView()
@@ -68,6 +67,7 @@ final class AuthViewController: UIViewController, AuthUIComponentsConfigurationP
 // MARK: User Interface
 
 private extension AuthViewController {
+    
     func setupUI() {
         [
             welcomeLabel,
@@ -86,7 +86,7 @@ private extension AuthViewController {
         
         view.backgroundColor = Constants.backgroundColor
         
-        configureLogo(logo: logo)
+        configureLogo(view: view, logo: logo)
         makeWelcomelabel()
         makeEmailContainer()
         makePasswordContainer()
@@ -98,13 +98,13 @@ private extension AuthViewController {
     
     func makeWelcomelabel() {
         
-        welcomeLabel.text = Constants.welcomeLabelText
+        welcomeLabel.text = "Welcome Back!"
         
         configureTitlelabel(label: welcomeLabel)
         
         welcomeLabel.snp.makeConstraints { make in
             make.top.equalTo(logo.snp.bottom).offset(Constants.horisontalOffset)
-            make.left.right.equalTo(view).inset(Constants.horisontalOffset)
+            make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
         }
     }
 
@@ -112,11 +112,13 @@ private extension AuthViewController {
         
         emailLabel.text = "Email address"
         
-        configureTextFieldBox(containerView: emailContainer, label: emailLabel, textField: emailtextField)
+        configureTextFieldBox(containerView: emailContainer, 
+                              label: emailLabel,
+                              textField: emailTextField)
         
         emailContainer.snp.makeConstraints { make in
-            make.top.equalTo(welcomeLabel.snp.bottom).offset(20)
-            make.left.right.equalTo(view).inset(Constants.horisontalOffset)
+            make.top.equalTo(welcomeLabel.snp.bottom).offset(Constants.titleLableAndTextFieldSpace)
+            make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
         }
     }
 
@@ -126,11 +128,13 @@ private extension AuthViewController {
         
         passwordLabel.text = "Password"
         
-        configureTextFieldBox(containerView: passwordContainer, label: passwordLabel, textField: passwordTextField)
+        configureTextFieldBox(containerView: passwordContainer, 
+                              label: passwordLabel,
+                              textField: passwordTextField)
         
         passwordContainer.snp.makeConstraints { make in
             make.top.equalTo(emailContainer.snp.bottom).offset(Constants.textFieldContainersSpace)
-            make.left.right.equalTo(view).inset(Constants.horisontalOffset)
+            make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
         }
     }
     
@@ -189,7 +193,8 @@ private extension AuthViewController {
         registrationLabel.text = "Don't have an account?"
         
         registrationButton.setTitle("Sign up", for: .normal)
-        
+        registrationButton.addTarget(self, action: #selector(signUpButtonDidTapped), for: .touchUpInside)
+
         configureFooterContainer(container: registrationContainer,
                                  label: registrationLabel,
                                  button: registrationButton)
@@ -198,6 +203,12 @@ private extension AuthViewController {
             make.top.equalTo(googleLogInButton.snp.bottom).offset(Constants.footerAndButtonsSpace)
             make.centerX.equalTo(view.snp.centerX)
         }
+    }
+    
+    @objc
+    func signUpButtonDidTapped() {
+        output.goToRegistration()
+        print("tap")
     }
 }
 
