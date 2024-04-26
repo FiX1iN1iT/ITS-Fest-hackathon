@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import SnapKit
 
-final class DetailProjectViewController: AGViewController {
+// MARK: - Constants
+
+private enum Constants {
+    
+}
+
+// MARK: - DetailProjectViewController
+
+final class DetailProjectViewController: UIViewController {
     private let output: DetailProjectViewOutput
 
     init(output: DetailProjectViewOutput) {
@@ -26,6 +35,8 @@ final class DetailProjectViewController: AGViewController {
         super.viewDidLoad()
     }
 }
+
+// MARK: - DetailProjectViewController
 
 extension DetailProjectViewController: DetailProjectViewInput {
 }
