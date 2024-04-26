@@ -137,9 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				748204342BDBF916005E7BF2 /* AuthorizationService */,
-				748204182BDBC637005E7BF2 /* FlowCoordinator.swift */,
-				7482041A2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift */,
-				7482041C2BDBCB01005E7BF2 /* UIColor + HEX.swift */,
+				7482045D2BDC1677005E7BF2 /* FlowCoordinator */,
+				7482045E2BDC1692005E7BF2 /* Extensions */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -223,6 +222,23 @@
 				748204562BDC15D3005E7BF2 /* DetailProjectContainer.swift */,
 			);
 			path = DetailProject;
+			sourceTree = "<group>";
+		};
+		7482045D2BDC1677005E7BF2 /* FlowCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				748204182BDBC637005E7BF2 /* FlowCoordinator.swift */,
+				7482041A2BDBC643005E7BF2 /* FlowCoordinatorProtocol.swift */,
+			);
+			path = FlowCoordinator;
+			sourceTree = "<group>";
+		};
+		7482045E2BDC1692005E7BF2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7482041C2BDBCB01005E7BF2 /* UIColor + HEX.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9D65C1302BDBA74500BFDFF8 /* Auth */ = {
