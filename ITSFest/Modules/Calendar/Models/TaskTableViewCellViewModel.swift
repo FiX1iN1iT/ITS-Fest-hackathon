@@ -11,7 +11,7 @@ struct TaskTableViewCellViewModel {
     let title: NSAttributedString
     let time: NSAttributedString
     
-    init(task: Task) {
+    init(task: CalendarTask) {
         let titleLabelTitle = task.title
         let titleLabelAttributedString = NSAttributedString(string: titleLabelTitle, attributes: Styles.titleAttributes)
         let timeLabelTitle = task.time.formattedInterval()

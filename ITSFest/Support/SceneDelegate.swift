@@ -16,8 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = TabBarViewController()
-        window?.makeKeyAndVisible()
+        let viewController = SplashAssembly.assembly()
+        let navigationController = UINavigationController(rootViewController: viewController)
+
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
 }

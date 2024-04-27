@@ -12,19 +12,19 @@ enum CustomError: String, Error {
 }
 
 protocol TaskServiceDescription: AnyObject {
-    func getTasks(on date: Date, completion: @escaping (Result<[Task], CustomError>) -> Void)
-    func getProjects(on date: Date, completion: @escaping (Result<[Task], CustomError>) -> Void)
+    func getTasks(on date: Date, completion: @escaping (Result<[CalendarTask], CustomError>) -> Void)
+    func getProjects(on date: Date, completion: @escaping (Result<[CalendarTask], CustomError>) -> Void)
 }
 
 class TaskService: TaskServiceDescription {
-    func getTasks(on date: Date, completion: @escaping (Result<[Task], CustomError>) -> Void) {
+    func getTasks(on date: Date, completion: @escaping (Result<[CalendarTask], CustomError>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             completion(.success(Mock.mockTasks))
 //            completion(.failure(.unknownError))
         }
     }
     
-    func getProjects(on date: Date, completion: @escaping (Result<[Task], CustomError>) -> Void) {
+    func getProjects(on date: Date, completion: @escaping (Result<[CalendarTask], CustomError>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             completion(.success(Mock.mockTasks))
 //            completion(.failure(.unknownError))

@@ -30,7 +30,7 @@ protocol CalendarViewOutput: AnyObject {
     func didTapTask(at index: Int)
     func numberOfSections() -> Int
     func numberOfRowsInSection(_ section: Int) -> Int
-    func getTask(at index: Int) -> Task
+    func getTask(at index: Int) -> CalendarTask
 }
 
 protocol CalendarInteractorInput: AnyObject {
@@ -38,7 +38,7 @@ protocol CalendarInteractorInput: AnyObject {
 }
 
 protocol CalendarInteractorOutput: AnyObject {
-    func didLoadDay(with tasks: [Task])
+    func didLoadDay(with tasks: [CalendarTask])
     func didStartLoading()
     func didEndLoading()
 }

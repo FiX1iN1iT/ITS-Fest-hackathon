@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Task {
+struct CalendarTask {
     let title: String
     let time: Date
 }
 
 struct Mock {
-    static let mockTasks: [Task] = [
+    static let mockTasks: [CalendarTask] = [
         .init(title: "User Interviews", time: Date()),
         .init(title: "Icons", time: Date()),
         .init(title: "Mockups", time: Date()),

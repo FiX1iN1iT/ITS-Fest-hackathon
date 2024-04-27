@@ -15,7 +15,7 @@ final class CalendarPresenter {
     private let router: CalendarRouterInput
     private let interactor: CalendarInteractorInput
     
-    private var tasks: [Task] = []
+    private var tasks: [CalendarTask] = []
     
     init(router: CalendarRouterInput, interactor: CalendarInteractorInput) {
         self.router = router
@@ -47,13 +47,13 @@ extension CalendarPresenter: CalendarViewOutput {
         Constants.numberOfRowsInSection
     }
     
-    func getTask(at index: Int) -> Task {
+    func getTask(at index: Int) -> CalendarTask {
         tasks[index]
     }
 }
 
 extension CalendarPresenter: CalendarInteractorOutput {
-    func didLoadDay(with tasks: [Task]) {
+    func didLoadDay(with tasks: [CalendarTask]) {
         self.tasks = tasks
         view?.reloadData()
         
