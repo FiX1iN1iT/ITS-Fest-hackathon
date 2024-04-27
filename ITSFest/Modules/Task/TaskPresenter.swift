@@ -14,7 +14,6 @@ final class TaskPresenter {
     private let router: TaskRouterInput
     private let interactor: TaskInteractorInput
 
-    private var task: Task?
 
     init(router: TaskRouterInput, interactor: TaskInteractorInput) {
         self.router = router
@@ -36,7 +35,6 @@ extension TaskPresenter: TaskViewOutput {
     }
     
     func didLoadView() {
-        interactor.loadProfile()
     }
 
     func didTapChangeButton(with status: String) {
@@ -45,15 +43,7 @@ extension TaskPresenter: TaskViewOutput {
 }
 
 private extension TaskPresenter {
-    func didLoadProfile(with task: Task) {
-        self.task = task
-
-        let viewModel = TaskViewModel(task: task)
-        view?.configure(with: viewModel)
-    }
 }
 
 extension TaskPresenter: TaskInteractorOutput {
-    func didReceive(result: Result<Task, Error>) {
-    }
 }

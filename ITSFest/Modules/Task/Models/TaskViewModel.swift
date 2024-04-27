@@ -9,15 +9,4 @@ import Foundation
 import UIKit
 
 struct TaskViewModel {
-    let infoTitle: NSAttributedString
-
-    init(task: Task) {
-        let infoTitleString = "\(task.title)"
-        self.infoTitle = NSAttributedString(
-            string: infoTitleString,
-            attributes: [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)
-            ]
-        )
-    }
 }

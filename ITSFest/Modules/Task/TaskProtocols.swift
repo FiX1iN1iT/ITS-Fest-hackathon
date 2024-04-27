@@ -24,9 +24,7 @@ protocol TaskRouterInput: AnyObject {
 }
 
 protocol TaskInteractorInput: AnyObject {
-    func loadProfile()
 }
 
 protocol TaskInteractorOutput: AnyObject {
-    func didReceive(result: Result<Task, Error>)
 }
