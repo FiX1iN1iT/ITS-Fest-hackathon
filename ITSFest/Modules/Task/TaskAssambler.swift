@@ -9,7 +9,7 @@ import Foundation
 
 import UIKit
 
-final class ProfileAssembler {
+final class TaskAssembler {
     static func assemble() -> UIViewController {
         let router = ProfileRouter()
         let interactor = TaskInteractor()

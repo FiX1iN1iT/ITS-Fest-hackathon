@@ -19,7 +19,7 @@ extension SplashPresenter: SplashModuleOutput{}
 extension SplashPresenter: SplashViewOutput{
     func didTapSplashButton() {
         print(#function)
-        router?.presentAuthVC()
+//        router?.presentAuthVC()
     }
     
     func didLoadView() {

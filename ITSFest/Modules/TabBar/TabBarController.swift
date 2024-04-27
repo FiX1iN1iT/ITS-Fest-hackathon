@@ -19,19 +19,19 @@ final class TabBarViewController: UITabBarController {
     // MARK: - Setup&Config
     
     private func setupTabs() {
-        let firstViewController = ViewController()
-        let secondViewController = ViewController()
-        let thirdViewController = ViewController()
+        let firstViewController = RegistrationContainer.assemble(with: RegistrationContext())
+        let secondViewController = TaskAssembler.assemble()
+        let thirdViewController = DetailProjectContainer.assemble(with: DetailProjectContext())
         
         let calendarContainer = CalendarContainer.assemble(with: .init())
         let calendarViewController = calendarContainer.viewController
         
-        let fifthViewController = ViewController()
+        let fifthViewController = SplashAssembly.assembly()
 
         let first = self.createNavigation(
             with: Texts.tabBarAccount,
             and: UIImage(systemName: "person.fill"),
-            vc: firstViewController
+            vc: firstViewController.viewController
         )
         let second = self.createNavigation(
             with: Texts.tabBarMain,
@@ -41,7 +41,7 @@ final class TabBarViewController: UITabBarController {
         let third = self.createNavigation(
             with: Texts.tabBarFavourite,
             and: UIImage(systemName: "star.fill"),
-            vc: thirdViewController
+            vc: thirdViewController.viewController
         )
         let calendar = self.createNavigation(
             with: Texts.tabBarCalendar,
