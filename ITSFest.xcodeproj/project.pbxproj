@@ -53,6 +53,7 @@
 		748204632BDC19DF005E7BF2 /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204622BDC19DF005E7BF2 /* BaseRouterProtocol.swift */; };
 		748204652BDC1E7C005E7BF2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204642BDC1E7C005E7BF2 /* DetailViewModel.swift */; };
 		748204672BDC614B005E7BF2 /* DetailProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204662BDC614B005E7BF2 /* DetailProjectCell.swift */; };
+		7482046A2BDD17E5005E7BF2 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204692BDD17E5005E7BF2 /* CircularProgressBar.swift */; };
 		9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1402BDBABA000BFDFF8 /* SnapKit */; };
 		9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
@@ -120,6 +121,7 @@
 		748204622BDC19DF005E7BF2 /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
 		748204642BDC1E7C005E7BF2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		748204662BDC614B005E7BF2 /* DetailProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectCell.swift; sourceTree = "<group>"; };
+		748204692BDD17E5005E7BF2 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		9DB778CF2BDABDE7001C3B34 /* ITSFest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITSFest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		7465F9702BDB9CB700CF0AE5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				748204682BDD17C9005E7BF2 /* UIComponents */,
 				748204342BDBF916005E7BF2 /* AuthorizationService */,
 				7482045E2BDC1692005E7BF2 /* Extensions */,
 				748204612BDC19D1005E7BF2 /* BaseRouter */,
@@ -275,6 +278,14 @@
 				748204622BDC19DF005E7BF2 /* BaseRouterProtocol.swift */,
 			);
 			path = BaseRouter;
+			sourceTree = "<group>";
+		};
+		748204682BDD17C9005E7BF2 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				748204692BDD17E5005E7BF2 /* CircularProgressBar.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		9D65C1302BDBA74500BFDFF8 /* Auth */ = {
@@ -555,6 +566,7 @@
 				7465F99F2BDBA36E00CF0AE5 /* FeedViewController.swift in Sources */,
 				B48BAADD2BDD1A7D00F373BB /* TaskViewModel.swift in Sources */,
 				20A588D12BDC11A000596EE7 /* AuthUIComponentsConfigurationProtocol.swift in Sources */,
+				7482046A2BDD17E5005E7BF2 /* CircularProgressBar.swift in Sources */,
 				748204592BDC15D3005E7BF2 /* DetailProjectViewController.swift in Sources */,
 				7465F9942BDBA35F00CF0AE5 /* ReplyProtocols.swift in Sources */,
 				7465F99D2BDBA36E00CF0AE5 /* FeedPresenter.swift in Sources */,

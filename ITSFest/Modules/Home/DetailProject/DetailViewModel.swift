@@ -11,11 +11,11 @@ struct DetailViewModel {
     let projName: String
     let projDescription: String
     let projDueDate: Date
-    let projTasks: [String]
+    let projTasks: [TaskModel]
     let projTeam: String
 }
 
-struct Task {
+struct TaskModel {
     let title: String
     let isCompleted: Bool
 }
