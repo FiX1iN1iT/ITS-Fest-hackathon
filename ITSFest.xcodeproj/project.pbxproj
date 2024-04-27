@@ -71,6 +71,13 @@
 		B48BAAC62BDC4F4C00F373BB /* SplashAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAC52BDC4F4C00F373BB /* SplashAssembly.swift */; };
 		B48BAACA2BDC56D100F373BB /* ColorsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAC92BDC56D100F373BB /* ColorsConstants.swift */; };
 		B48BAACC2BDC6A8300F373BB /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAACB2BDC6A8300F373BB /* SplashRouter.swift */; };
+		B48BAACF2BDD189700F373BB /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAACE2BDD189700F373BB /* TaskViewController.swift */; };
+		B48BAAD12BDD18D300F373BB /* TaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAD02BDD18D300F373BB /* TaskInteractor.swift */; };
+		B48BAAD32BDD18F400F373BB /* TaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAD22BDD18F400F373BB /* TaskPresenter.swift */; };
+		B48BAAD72BDD191F00F373BB /* TaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAD62BDD191F00F373BB /* TaskRouter.swift */; };
+		B48BAAD92BDD194C00F373BB /* TaskAssambler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAAD82BDD194C00F373BB /* TaskAssambler.swift */; };
+		B48BAADB2BDD1A0D00F373BB /* TaskProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAADA2BDD1A0D00F373BB /* TaskProtocols.swift */; };
+		B48BAADD2BDD1A7D00F373BB /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BAADC2BDD1A7D00F373BB /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +138,13 @@
 		B48BAAC52BDC4F4C00F373BB /* SplashAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAssembly.swift; sourceTree = "<group>"; };
 		B48BAAC92BDC56D100F373BB /* ColorsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConstants.swift; sourceTree = "<group>"; };
 		B48BAACB2BDC6A8300F373BB /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		B48BAACE2BDD189700F373BB /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		B48BAAD02BDD18D300F373BB /* TaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInteractor.swift; sourceTree = "<group>"; };
+		B48BAAD22BDD18F400F373BB /* TaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPresenter.swift; sourceTree = "<group>"; };
+		B48BAAD62BDD191F00F373BB /* TaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRouter.swift; sourceTree = "<group>"; };
+		B48BAAD82BDD194C00F373BB /* TaskAssambler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAssambler.swift; sourceTree = "<group>"; };
+		B48BAADA2BDD1A0D00F373BB /* TaskProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProtocols.swift; sourceTree = "<group>"; };
+		B48BAADC2BDD1A7D00F373BB /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +331,7 @@
 		9DB778F52BDADFF7001C3B34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B48BAACD2BDD188200F373BB /* Task */,
 				B48BAABA2BDC4CED00F373BB /* Splash */,
 				9DB778FA2BDB12AB001C3B34 /* Home */,
 				9DB778FB2BDB12B5001C3B34 /* Chat */,
@@ -390,6 +405,28 @@
 				B48BAACB2BDC6A8300F373BB /* SplashRouter.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		B48BAACD2BDD188200F373BB /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				B48BAADE2BDD1A8A00F373BB /* Models */,
+				B48BAACE2BDD189700F373BB /* TaskViewController.swift */,
+				B48BAAD02BDD18D300F373BB /* TaskInteractor.swift */,
+				B48BAAD22BDD18F400F373BB /* TaskPresenter.swift */,
+				B48BAAD62BDD191F00F373BB /* TaskRouter.swift */,
+				B48BAAD82BDD194C00F373BB /* TaskAssambler.swift */,
+				B48BAADA2BDD1A0D00F373BB /* TaskProtocols.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		B48BAADE2BDD1A8A00F373BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B48BAADC2BDD1A7D00F373BB /* TaskViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,6 +517,7 @@
 			files = (
 				20A588CD2BDBE2FD00596EE7 /* RegistrationProtocols.swift in Sources */,
 				7465F9A02BDBA36E00CF0AE5 /* FeedProtocols.swift in Sources */,
+				B48BAACF2BDD189700F373BB /* TaskViewController.swift in Sources */,
 				B48BAACC2BDC6A8300F373BB /* SplashRouter.swift in Sources */,
 				748204652BDC1E7C005E7BF2 /* DetailViewModel.swift in Sources */,
 				7465F9922BDBA35F00CF0AE5 /* ReplyRouter.swift in Sources */,
@@ -506,13 +544,16 @@
 				748204582BDC15D3005E7BF2 /* DetailProjectRouter.swift in Sources */,
 				9DB779042BDB1549001C3B34 /* CreateViewController.swift in Sources */,
 				7465F99E2BDBA36E00CF0AE5 /* FeedRouter.swift in Sources */,
+				B48BAADB2BDD1A0D00F373BB /* TaskProtocols.swift in Sources */,
 				20A588CB2BDBE2FD00596EE7 /* RegistrationRouter.swift in Sources */,
 				9DB778F32BDADCFA001C3B34 /* TabBarController.swift in Sources */,
 				7465F9932BDBA35F00CF0AE5 /* ReplyViewController.swift in Sources */,
 				7465F9A22BDBA36E00CF0AE5 /* FeedContainer.swift in Sources */,
+				B48BAAD72BDD191F00F373BB /* TaskRouter.swift in Sources */,
 				7465F9962BDBA35F00CF0AE5 /* ReplyContainer.swift in Sources */,
 				7482045C2BDC15D3005E7BF2 /* DetailProjectContainer.swift in Sources */,
 				7465F99F2BDBA36E00CF0AE5 /* FeedViewController.swift in Sources */,
+				B48BAADD2BDD1A7D00F373BB /* TaskViewModel.swift in Sources */,
 				20A588D12BDC11A000596EE7 /* AuthUIComponentsConfigurationProtocol.swift in Sources */,
 				748204592BDC15D3005E7BF2 /* DetailProjectViewController.swift in Sources */,
 				7465F9942BDBA35F00CF0AE5 /* ReplyProtocols.swift in Sources */,
@@ -529,6 +570,9 @@
 				7465F9722BDB9CDD00CF0AE5 /* AuthService.swift in Sources */,
 				7482045A2BDC15D3005E7BF2 /* DetailProjectProtocols.swift in Sources */,
 				9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */,
+				B48BAAD12BDD18D300F373BB /* TaskInteractor.swift in Sources */,
+				B48BAAD32BDD18F400F373BB /* TaskPresenter.swift in Sources */,
+				B48BAAD92BDD194C00F373BB /* TaskAssambler.swift in Sources */,
 				B48BAACA2BDC56D100F373BB /* ColorsConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
