@@ -25,6 +25,9 @@ extension AuthPresenter: AuthModuleInput {
 }
 
 extension AuthPresenter: AuthViewOutput {
+    func goToRegistration() {
+        router.openRegistration()
+    }
 }
 
 extension AuthPresenter: AuthInteractorOutput {

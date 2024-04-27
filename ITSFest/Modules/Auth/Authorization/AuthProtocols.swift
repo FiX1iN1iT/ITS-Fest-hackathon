@@ -19,6 +19,7 @@ protocol AuthViewInput: AnyObject {
 }
 
 protocol AuthViewOutput: AnyObject {
+    func goToRegistration() 
 }
 
 protocol AuthInteractorInput: AnyObject {
@@ -28,4 +29,5 @@ protocol AuthInteractorOutput: AnyObject {
 }
 
 protocol AuthRouterInput: AnyObject, BaseSwiftRouterInput {
+    func openRegistration()
 }

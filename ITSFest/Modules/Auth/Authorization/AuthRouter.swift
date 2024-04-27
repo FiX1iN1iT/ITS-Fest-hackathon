@@ -12,4 +12,8 @@ final class AuthRouter: BaseSwiftRouter {
 }
 
 extension AuthRouter: AuthRouterInput {
+    
+    func openRegistration() {
+
+    }
 }
