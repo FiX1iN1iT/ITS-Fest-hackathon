@@ -76,6 +76,16 @@ final class DetailProjectViewController: UIViewController {
     private let addButton = UIButton()
     let progressBar = CircularProgressBar(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
     
+    var tasksArr = [
+        TaskModel(title: "One", isCompleted: false),
+        TaskModel(title: "Two", isCompleted: false),
+        TaskModel(title: "Three", isCompleted: false),
+        TaskModel(title: "Four", isCompleted: false),
+        TaskModel(title: "Five", isCompleted: false),
+        TaskModel(title: "Six", isCompleted: false),
+        TaskModel(title: "Seven", isCompleted: false)
+    ]
+    
     private let output: DetailProjectViewOutput
     
     init(output: DetailProjectViewOutput) {
@@ -95,6 +105,8 @@ final class DetailProjectViewController: UIViewController {
         setupUI()
         setupNavigationController()
     }
+    
+    
 }
 
 // MARK: - User Interface
@@ -172,27 +184,30 @@ private extension DetailProjectViewController {
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-Constants.baseOffset)
         }
     }
-
+    
     func makeProgress() {
         projProgressNameLabel.text = "Project Progress"
         projProgressNameLabel.font = UIFont.systemFont(ofSize: Constants.contentFontSize, weight: .semibold)
         projProgressNameLabel.textColor = .white
-
+        
         projProgressNameLabel.snp.makeConstraints { make in
             make.top.equalTo(projDescLabel.snp.bottom).offset(Constants.expandedOffset)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(Constants.baseOffset)
         }
     }
-
+    
     func makeProgressView() {
-        configureProgressBar(numOfCompletedTasks: 8, allTasksNum: 26)
+        configureProgressBar(numOfCompletedTasks: Float(tasksArr.filter({ task in
+            task.isCompleted
+        }).count),
+                             allTasksNum: Float(tasksArr.count))
         progressBar.snp.makeConstraints { make in
             make.centerY.equalTo(projProgressNameLabel.snp.centerY)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-Constants.baseOffset)
             make.width.height.equalTo(50)
         }
     }
-
+    
     
     func makeAllTaskLabel() {
         allTasksLabel.text = "All Tasks"
@@ -273,8 +288,9 @@ private extension DetailProjectViewController {
         }
     }
     
-    private func configureProgressBar(numOfCompletedTasks: Float, allTasksNum: Float) {
+    func configureProgressBar(numOfCompletedTasks: Float, allTasksNum: Float) {
         progressBar.setProgressWithAnimation(duration: 1.0, value: numOfCompletedTasks / allTasksNum)
+        view.layoutIfNeeded()
     }
     
     func makeCollectionView() {
@@ -305,7 +321,7 @@ private extension DetailProjectViewController {
 
 extension DetailProjectViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        tasksArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -313,6 +329,7 @@ extension DetailProjectViewController: UICollectionViewDataSource {
             fatalError("Unable to dequeue DetailProjectCell")
         }
         
+        cell.configureWith(tasksArr[indexPath.row])
         return cell
     }
 }
@@ -320,7 +337,29 @@ extension DetailProjectViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension DetailProjectViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Cell at index \(indexPath.row) was selected")
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? DetailProjectCell else {
+            print("Failed to get cell at indexPath \(indexPath)")
+            return
+        }
+        
+        
+        
+        if tasksArr[indexPath.row].isCompleted {
+            cell.changeBackgroundColor(false)
+            tasksArr[indexPath.row].isCompleted = false
+        } else {
+            cell.changeBackgroundColor(true)
+            tasksArr[indexPath.row].isCompleted = true
+        }
+        
+        configureProgressBar(numOfCompletedTasks: Float(tasksArr.filter({ task in
+            task.isCompleted
+        }).count),
+                             allTasksNum: Float(tasksArr.count))
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
