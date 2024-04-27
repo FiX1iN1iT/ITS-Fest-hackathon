@@ -34,7 +34,7 @@ protocol CalendarViewOutput: AnyObject {
 }
 
 protocol CalendarInteractorInput: AnyObject {
-    func loadDay(_ date: Date)
+    func loadTasks(for date: Date)
 }
 
 protocol CalendarInteractorOutput: AnyObject {

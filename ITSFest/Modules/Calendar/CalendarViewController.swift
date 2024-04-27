@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 
 final class CalendarViewController: UIViewController {
+    var calendarService: CalendarServiceDescription?
+    
     private let output: CalendarViewOutput
     
     private let weeklyCalendarViewController = WeeklyCalendarViewController()
@@ -54,6 +56,7 @@ private extension CalendarViewController {
     func setupWeeklyCalendarViewController() {
         addChild(weeklyCalendarViewController)
         weeklyCalendarViewController.delegate = self
+        weeklyCalendarViewController.calendarService = calendarService
         view.addSubview(weeklyCalendarViewController.view)
         
         weeklyCalendarViewController.view.snp.makeConstraints { make in

@@ -7,10 +7,10 @@
 
 import Foundation
 
-extension Date {
-    func formattedInterval() -> String {
+extension Date {    
+    func extractDate(with format: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        return "\(dateFormatter.string(from: self))"
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
     }
 }

@@ -16,7 +16,12 @@ protocol WeeklyCalendarViewControllerDelegate: AnyObject {
 
 final class WeeklyCalendarViewController: UIViewController {
     
-    // MARK: - Private properties
+    // MARK: - Public Properties
+    
+    weak var delegate: WeeklyCalendarViewControllerDelegate?
+    var calendarService: CalendarServiceDescription?
+    
+    // MARK: - Private Properties
     
     private let monthLabel = UILabel()
     private var weekCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
@@ -26,14 +31,10 @@ final class WeeklyCalendarViewController: UIViewController {
     private var selectedCell: (outerIndexPath: IndexPath, innerIndexPath: IndexPath)?
     private var shouldDeselectCell: (outerIndexPath: IndexPath, innerIndexPath: IndexPath)?
     
-    weak var delegate: WeeklyCalendarViewControllerDelegate?
-    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        calendar = fetchWeeklyCalendar()
-        initProperties()
         setup()
     }
 }
@@ -43,6 +44,7 @@ private extension WeeklyCalendarViewController {
     // MARK: - Setup
     
     func setup() {
+        initProperties()
         setupView()
         setupMonthLabel()
         setupWeekCollectionView()
@@ -94,51 +96,7 @@ private extension WeeklyCalendarViewController {
         }
     }
     
-    // MARK: - Helpers
-    
-    func fetchWeeklyCalendar(for date: Date = Date()) -> [[Date]] {
-        let calendar = Calendar.current
-        guard
-            let startDate = calendar.date(byAdding: .year, value: -1, to: date),
-            let endDate = calendar.date(byAdding: .year, value: 1, to: date),
-            let startWeek = calendar.dateInterval(of: .weekOfMonth, for: startDate),
-            let endWeek = calendar.dateInterval(of: .weekOfMonth, for: endDate)
-        else {
-            return []
-        }
-        
-        var start = startWeek.start
-        let end = endWeek.start
-        
-        var weekArray: [[Date]] = []
-        while start <= end {
-            weekArray.append(fetchWeek(for: start))
-            guard let nextDate = calendar.date(byAdding: .day, value: 7, to: start) else {
-                return []
-            }
-            start = nextDate
-        }
-        
-        return weekArray
-    }
-    
-    func fetchWeek(for date: Date = Date()) -> [Date] {
-        let calendar = Calendar.current
-        let week = calendar.dateInterval(of: .weekOfMonth, for: date)
-        
-        guard let firstWeekDay = week?.start else {
-            return []
-        }
-        
-        var dateArray: [Date] = []
-        (0...6).forEach { day in
-            if let weekDay = calendar.date(byAdding: .day, value: day, to: firstWeekDay) {
-                dateArray.append(weekDay)
-            }
-        }
-        
-        return dateArray
-    }
+    // MARK: - Configure
     
     func configureMonthLabel(with date: Date = Date()) {
         let dateFormatter = DateFormatter()
@@ -150,8 +108,25 @@ private extension WeeklyCalendarViewController {
     // MARK: - Init
     
     func initProperties() {
+        initCalendar()
+        initSelectedCell()
+    }
+    
+    func initCalendar() {
+        guard let fetchedCalendar = calendarService?.fetchWeeklyCalendar(for: Date()) else {
+            return
+        }
+        
+        calendar = fetchedCalendar
+    }
+    
+    func initSelectedCell() {
+        guard let weekdayIndex = calendarService?.getWeekdayIndex(from: Date()) else {
+            return
+        }
+        
         let outerIndexPath = IndexPath(item: calendar.count / 2, section: 0)
-        let innerIndex = CalendarService.shared.getWeekdayIndex(from: Date())
+        let innerIndex = weekdayIndex
         let innerIndexPath = IndexPath(item: innerIndex, section: 0)
         selectedCell = (outerIndexPath, innerIndexPath)
     }

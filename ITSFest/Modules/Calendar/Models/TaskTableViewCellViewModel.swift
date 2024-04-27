@@ -14,7 +14,7 @@ struct TaskTableViewCellViewModel {
     init(task: CalendarTask) {
         let titleLabelTitle = task.title
         let titleLabelAttributedString = NSAttributedString(string: titleLabelTitle, attributes: Styles.titleAttributes)
-        let timeLabelTitle = task.time.formattedInterval()
+        let timeLabelTitle = task.time.extractDate(with: Constants.TimeLabel.format)
         let timeLabelAttributedString = NSAttributedString(string: timeLabelTitle, attributes: Styles.timeLabelTitleAttributes)
         
         title = titleLabelAttributedString
@@ -33,5 +33,11 @@ private extension TaskTableViewCellViewModel {
             .foregroundColor: UIColor.secondaryLabel,
             .font: UIFont.systemFont(ofSize: 12, weight: .bold)
         ]
+    }
+    
+    struct Constants {
+        struct TimeLabel {
+            static let format: String = "HH:mm"
+        }
     }
 }

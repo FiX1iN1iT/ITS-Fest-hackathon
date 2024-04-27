@@ -14,19 +14,26 @@ final class CalendarInteractor {
 }
 
 extension CalendarInteractor: CalendarInteractorInput {
-    func loadDay(_ date: Date) {
-        self.output?.didStartLoading()
-        taskService?.getTasks(on: date) { [weak self] result in
+    func loadTasks(for date: Date) {
+        guard 
+            let output = output,
+            let taskService = taskService
+        else {
+            return
+        }
+        
+        output.didStartLoading()
+        taskService.getTasks(on: date) { [weak self] result in
             guard let self else {
                 return
             }
-            self.output?.didEndLoading()
+            output.didEndLoading()
 
             switch result {
             case .success(let tasks):
-                self.output?.didLoadDay(with: tasks)
+                output.didLoadDay(with: tasks)
             case .failure:
-                self.output?.didLoadDay(with: [])
+                output.didLoadDay(with: [])
             }
         }
     }

@@ -12,9 +12,9 @@ struct DayCollectionViewCellViewModel {
     let dayOfMonth: NSAttributedString
     
     init(date: Date) {
-        let weekdayLabelTitle = CalendarService.shared.extractDate(date: date, format: WeekdayLabel.format)
+        let weekdayLabelTitle = date.extractDate(with: Constants.WeekdayLabel.format)
         let weekdayLabelAttributedString = NSAttributedString(string: weekdayLabelTitle, attributes: Styles.weekdayAttributes)
-        let dayOfMonthLabelTitle = CalendarService.shared.extractDate(date: date, format: DayOfMonthLabel.format)
+        let dayOfMonthLabelTitle = date.extractDate(with: Constants.DayOfMonthLabel.format)
         let dayOfMonthLabelAttributedString = NSAttributedString(string: dayOfMonthLabelTitle, attributes: Styles.dayOfMonthAttributes)
         
         self.weekday = weekdayLabelAttributedString
@@ -35,11 +35,13 @@ private extension DayCollectionViewCellViewModel {
         ]
     }
     
-    struct WeekdayLabel {
-        static let format: String = "EEE"
-    }
-    
-    struct DayOfMonthLabel {
-        static let format: String = "dd"
+    struct Constants {
+        struct WeekdayLabel {
+            static let format: String = "EEE"
+        }
+        
+        struct DayOfMonthLabel {
+            static let format: String = "dd"
+        }
     }
 }
