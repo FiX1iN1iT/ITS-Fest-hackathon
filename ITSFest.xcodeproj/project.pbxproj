@@ -75,8 +75,8 @@
 		9D65C15C2BDBB56200BFDFF8 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C15B2BDBB56200BFDFF8 /* CalendarService.swift */; };
 		9D65C15F2BDBD32A00BFDFF8 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C15E2BDBD32A00BFDFF8 /* TaskTableViewCell.swift */; };
 		9D65C1622BDBD7CC00BFDFF8 /* TaskTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C1612BDBD7CC00BFDFF8 /* TaskTableViewCellViewModel.swift */; };
-		9D65C1652BDBD9C700BFDFF8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65C1642BDBD9C700BFDFF8 /* Task.swift */; };
 		9D97C3372BDCE8FF0042A31C /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D97C3362BDCE8FF0042A31C /* DTO.swift */; };
+		9D97C33E2BDD12370042A31C /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D97C33D2BDD12370042A31C /* Domain.swift */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
 		9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */; };
 		9DB778D72BDABDE7001C3B34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D62BDABDE7001C3B34 /* ViewController.swift */; };
@@ -155,8 +155,8 @@
 		9D65C15B2BDBB56200BFDFF8 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		9D65C15E2BDBD32A00BFDFF8 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		9D65C1612BDBD7CC00BFDFF8 /* TaskTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		9D65C1642BDBD9C700BFDFF8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		9D97C3362BDCE8FF0042A31C /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
+		9D97C33D2BDD12370042A31C /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 		9DB778CF2BDABDE7001C3B34 /* ITSFest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITSFest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -416,14 +416,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		9D65C1632BDBD9BD00BFDFF8 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				9D65C1642BDBD9C700BFDFF8 /* Task.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		9D65C1662BDBEB4700BFDFF8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				9D97C3362BDCE8FF0042A31C /* DTO.swift */,
+				9D97C33D2BDD12370042A31C /* Domain.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -545,7 +538,6 @@
 		9DB778FD2BDB12C3001C3B34 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				9D65C1632BDBD9BD00BFDFF8 /* Entities */,
 				9D65C1472BDBB22800BFDFF8 /* Views */,
 				9D65C1442BDBB00C00BFDFF8 /* Models */,
 				9D65C1332BDBA9F400BFDFF8 /* CalendarPresenter.swift */,
@@ -689,7 +681,6 @@
 				7465F9A12BDBA36E00CF0AE5 /* FeedInteractor.swift in Sources */,
 				9DB779042BDB1549001C3B34 /* CreateViewController.swift in Sources */,
 				7465F99E2BDBA36E00CF0AE5 /* FeedRouter.swift in Sources */,
-				9D65C1652BDBD9C700BFDFF8 /* Task.swift in Sources */,
 				7482045B2BDC15D3005E7BF2 /* DetailProjectInteractor.swift in Sources */,
 				B48BAAC42BDC4F3200F373BB /* SplashViewModel.swift in Sources */,
 				20A588CE2BDBE2FD00596EE7 /* RegistrationInteractor.swift in Sources */,
@@ -748,6 +739,7 @@
 				7465F9722BDB9CDD00CF0AE5 /* AuthService.swift in Sources */,
 				9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */,
 				B48BAACA2BDC56D100F373BB /* ColorsConstants.swift in Sources */,
+				9D97C33E2BDD12370042A31C /* Domain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

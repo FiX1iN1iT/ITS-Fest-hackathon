@@ -6,7 +6,23 @@
 //
 
 import Foundation
+import Firebase
 
-struct TaskServiceUser {
-    let projects: [String]
+// MARK: - User
+
+struct TaskServiceUser: Decodable {
+    let projects: [DocumentReference]?
+}
+
+// MARK: - Project
+
+struct TaskServiceProject: Decodable {
+    let tasks: [DocumentReference]?
+}
+
+// MARK: - Task
+
+struct TaskServiceTask: Decodable {
+    let title: String
+    let date: Date
 }
