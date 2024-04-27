@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        let viewController = SplashAssembly.assembly()
+        let viewController = ProfileAssembler.assemble()
         let navigationController = UINavigationController(rootViewController: viewController)
 
         let window = UIWindow(windowScene: windowScene)

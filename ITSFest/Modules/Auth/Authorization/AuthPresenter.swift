@@ -25,6 +25,22 @@ extension AuthPresenter: AuthModuleInput {
 }
 
 extension AuthPresenter: AuthViewOutput {
+    func logInBy(login: String, pass: String) {
+        print(#function)
+    }
+    
+    func logInByGoogle() {
+        view?.showAlert(title: "Comming soon...")
+    }
+    
+    func showPassword() {
+        view?.togglePasswordDisplay()
+    }
+    
+    func recoverPassword() {
+        view?.showAlert(title: "Comming soon...")
+    }
+    
     func goToRegistration() {
         router.openRegistration()
     }

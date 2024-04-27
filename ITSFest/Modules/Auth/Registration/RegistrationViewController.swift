@@ -78,6 +78,13 @@ final class RegistrationViewController: ViewController, AuthUIComponentsConfigur
         super.viewDidLoad()
         
         setupUI()
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTapWholeView))
+        view.addGestureRecognizer(recognizer)
+    }
+    
+    @objc private func didTapWholeView() {
+        view.endEditing(true)
     }
 }
 
@@ -148,7 +155,7 @@ private extension RegistrationViewController {
         configureTitlelabel(label: createLabel)
         
         createLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(Constants.horisontalOffset)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(Constants.horisontalOffset)
             make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
         }
     }
@@ -189,19 +196,15 @@ private extension RegistrationViewController {
             make.top.equalTo(nameContainer.snp.bottom).offset(Constants.textFieldContainersSpace)
             make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
         }
+        
+        emailTextField.keyboardType = .emailAddress
     }
     
     func makePasswordContainer() {
         
-        passwordLabel.text = "Password"
+        passwordButton.addTarget(self, action: #selector(showPasswordButtonDidTapped), for: .touchUpInside)
         
-        passwordImageView.image = UIImage(systemName: "lock.fill")
-        passwordImageView.tintColor = Constants.textColor
-        
-        passwordButton.setImage(UIImage(systemName: "eyes"), for: .normal)
-        passwordButton.tintColor = Constants.textColor
-        
-        configureTextFieldBox(containerView: passwordContainer, 
+        configurePasswordTextFieldBox(containerView: passwordContainer,
                               label: passwordLabel,
                               textField: passwordTextField,
                               image: passwordImageView,
@@ -217,8 +220,7 @@ private extension RegistrationViewController {
         
         checkboxButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
         checkboxButton.tintColor = Constants.disableCheckboxColor
-        
-//        privacyLable.numberOfLines = 0
+        checkboxButton.addTarget(self, action: #selector(checkboxButtonDidTapped), for: .touchUpInside)
         
         let attributedString = NSMutableAttributedString(string: "I have read & agreed to DayTask Privacy Policy, Terms & Condition")
         attributedString.addAttribute(.link, value: "https://www.vk.com", range: NSRange(location: 32, length: 33))
@@ -232,7 +234,6 @@ private extension RegistrationViewController {
         checkboxContainer.snp.makeConstraints { make in
             make.top.equalTo(passwordContainer.snp.bottom)
             make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
-//            make.height.equalTo(35)
         }
         
     }
@@ -241,6 +242,7 @@ private extension RegistrationViewController {
         
         logInButton.setTitle("Log In", for: .normal)
         configureMainButton(button: logInButton)
+        logInButton.addTarget(self, action: #selector(mainRegisterButtonDidTapped), for: .touchUpInside)
         
         logInButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
@@ -265,6 +267,7 @@ private extension RegistrationViewController {
         
         googleLogInButton.setTitle("Google", for: .normal)
         googleLogInButton.setImage(UIImage(systemName: "person"), for: .normal)
+        googleLogInButton.addTarget(self, action: #selector(googleRegisterButtonDidTapped), for: .touchUpInside)
 
         configureSecondaryButton(button: googleLogInButton)
         
@@ -276,10 +279,10 @@ private extension RegistrationViewController {
     
     func makeRegistrationContainer() {
         
-        registrationLabel.text = "Don't have an account?"
+        registrationLabel.text = "Already have an account?"
+        registrationButton.setTitle("Log in", for: .normal)
+        registrationButton.addTarget(self, action: #selector(logInButtonDidTapped), for: .touchUpInside)
         
-        registrationButton.setTitle("Sign up", for: .normal)
-
         configureFooterContainer(container: registrationContainer,
                                  label: registrationLabel,
                                  button: registrationButton)
@@ -297,7 +300,57 @@ private extension RegistrationViewController {
         UIApplication.shared.open(URL)
         return false
     }
+    
+    @objc
+    func logInButtonDidTapped() {
+        output.goToLogin()
+    }
+    
+    @objc
+    func mainRegisterButtonDidTapped() {
+        output.registerBy(name: nameTextField.text ?? "", login: emailTextField.text ?? "", pass: passwordLabel.text ?? "")
+    }
+    
+    @objc
+    func googleRegisterButtonDidTapped() {
+        output.registerByGoogle()
+    }
+    
+    @objc
+    func showPasswordButtonDidTapped() {
+        output.showPassword()
+    }
+    
+    @objc
+    func checkboxButtonDidTapped() {
+        output.checkboxTapp()
+    }
 }
 
 extension RegistrationViewController: RegistrationViewInput {
+    
+    func togglePasswordDisplay() {
+        if passwordTextField.isSecureTextEntry {
+            passwordButton.setImage(UIImage(systemName: "eyes.inverse"), for: .normal)
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            passwordButton.setImage(UIImage(systemName: "eyes"), for: .normal)
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
+    
+    func toggleCheckbox() {
+        if checkboxButton.currentImage == UIImage(systemName: "checkmark.square") {
+            checkboxButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+        } else {
+            checkboxButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        }
+    }
+    
+    func showAlert(title: String) {
+        let ac = UIAlertController(title: "Error", message: title, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(ac, animated: true)
+    }
+    
 }

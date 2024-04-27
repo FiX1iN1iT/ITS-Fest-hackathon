@@ -16,10 +16,16 @@ protocol AuthModuleOutput: AnyObject {
 }
 
 protocol AuthViewInput: AnyObject {
+    func togglePasswordDisplay()
+    func showAlert(title: String)
 }
 
 protocol AuthViewOutput: AnyObject {
-    func goToRegistration() 
+    func goToRegistration()
+    func logInBy(login: String, pass: String)
+    func logInByGoogle()
+    func showPassword()
+    func recoverPassword()
 }
 
 protocol AuthInteractorInput: AnyObject {

@@ -47,6 +47,7 @@ extension AuthUIComponentsConfigurationProtocol {
         
         textField.textColor = Constants.textFieldTextColor
         textField.backgroundColor = Constants.textFieldColor
+        textField.keyboardType = .default
         
         containerView.backgroundColor = .clear
         
@@ -89,6 +90,25 @@ extension AuthUIComponentsConfigurationProtocol {
             make.centerY.equalTo(backgroundView.snp.centerY)
             make.centerX.equalTo(backgroundView.snp.right).offset(-20)
         }
+    }
+    
+    func configurePasswordTextFieldBox(containerView: UIView, label: UILabel, textField: UITextField, image: UIImageView, button: UIButton) {
+        
+        label.text = "Password"
+        
+        image.image = UIImage(systemName: "lock.fill")
+        image.tintColor = Constants.textColor
+        
+        button.setImage(UIImage(systemName: "eyes"), for: .normal)
+        button.tintColor = Constants.textColor
+        
+        textField.isSecureTextEntry = true
+        
+        configureTextFieldBox(containerView: containerView,
+                              label: label,
+                              textField: textField,
+                              image: image,
+                              button: button)
     }
     
     func configureLogo(view: UIView, logo: UIImageView) {

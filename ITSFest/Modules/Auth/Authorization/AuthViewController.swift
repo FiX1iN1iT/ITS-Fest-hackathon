@@ -72,6 +72,13 @@ final class AuthViewController: UIViewController, AuthUIComponentsConfigurationP
         super.viewDidLoad()
         
         setupUI()
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTapWholeView))
+        view.addGestureRecognizer(recognizer)
+    }
+    
+    @objc private func didTapWholeView() {
+        view.endEditing(true)
     }
 }
 
@@ -136,21 +143,17 @@ private extension AuthViewController {
             make.top.equalTo(welcomeLabel.snp.bottom).offset(Constants.titleLableAndTextFieldSpace)
             make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
         }
+        
+        emailTextField.keyboardType = .emailAddress
     }
 
     func makePasswordContainer() {
         
         makeForgotPasswordButton()
         
-        passwordLabel.text = "Password"
+        passwordButton.addTarget(self, action: #selector(showPasswordButtonDidTapped), for: .touchUpInside)
         
-        passwordImageView.image = UIImage(systemName: "lock.fill")
-        passwordImageView.tintColor = Constants.textColor
-        
-        passwordButton.setImage(UIImage(systemName: "eyes"), for: .normal)
-        passwordButton.tintColor = Constants.textColor
-        
-        configureTextFieldBox(containerView: passwordContainer,
+        configurePasswordTextFieldBox(containerView: passwordContainer,
                               label: passwordLabel,
                               textField: passwordTextField,
                               image: passwordImageView,
@@ -165,9 +168,9 @@ private extension AuthViewController {
     func makeForgotPasswordButton() {
         
         forgotPasswordButton.setTitle("Forgot password?", for: .normal)
-        
         forgotPasswordButton.setTitleColor(Constants.textColor, for: .normal)
         forgotPasswordButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonDidTapped), for: .touchUpInside)
     
         forgotPasswordButton.snp.makeConstraints { make in
             make.top.equalTo(passwordContainer.snp.bottom).offset(5)
@@ -178,6 +181,7 @@ private extension AuthViewController {
     func makeLogInButton() {
         
         logInButton.setTitle("Log In", for: .normal)
+        logInButton.addTarget(self, action: #selector(mainLogInButtonDidTapped), for: .touchUpInside)
         configureMainButton(button: logInButton)
         
         logInButton.snp.makeConstraints { make in
@@ -203,6 +207,7 @@ private extension AuthViewController {
         
         googleLogInButton.setTitle("Google", for: .normal)
         googleLogInButton.setImage(UIImage(systemName: "person"), for: .normal)
+        googleLogInButton.addTarget(self, action: #selector(googleLogInButtonDidTapped), for: .touchUpInside)
 
         configureSecondaryButton(button: googleLogInButton)
         
@@ -234,9 +239,45 @@ private extension AuthViewController {
         output.goToRegistration()
         print("tap")
     }
+    
+    @objc
+    func mainLogInButtonDidTapped() {
+        output.logInBy(login: "login", pass: "pass")
+    }
+    
+    @objc
+    func googleLogInButtonDidTapped() {
+        output.logInByGoogle()
+    }
+    
+    @objc
+    func showPasswordButtonDidTapped() {
+        output.showPassword()
+    }
+    
+    @objc
+    func forgotPasswordButtonDidTapped() {
+        output.recoverPassword()
+    }
 }
 
 // MARK: - AuthViewInput
 
 extension AuthViewController: AuthViewInput {
+    
+    func togglePasswordDisplay() {
+        if passwordTextField.isSecureTextEntry {
+            passwordButton.setImage(UIImage(systemName: "eyes.inverse"), for: .normal)
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            passwordButton.setImage(UIImage(systemName: "eyes"), for: .normal)
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
+    
+    func showAlert(title: String) {
+        let ac = UIAlertController(title: "Error", message: title, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(ac, animated: true)
+    }
 }
