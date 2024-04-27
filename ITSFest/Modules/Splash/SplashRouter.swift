@@ -14,6 +14,6 @@ final class SplashRouter: BaseSwiftRouter {
 extension SplashRouter: SplashRouterInput {
     func presentAuthVC() {
         print(#function)
-        openModuleFromViewController(sourseView: self.view, openView: CalendarContainer.assemble(with: .init()).viewController)
+        openModuleFromViewController(sourceView: self.view, openView: CalendarContainer.assemble(with: .init()).viewController, needHavController: false)
     }
 }
