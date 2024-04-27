@@ -35,7 +35,7 @@ extension RegistrationPresenter: RegistrationViewOutput {
     }
     
     func registerByGoogle() {
-//        view?.showAlert(title: "Comming soon...")
+        view?.showAlert(title: "Comming soon...")
     }
     
     func registerBy(name: String, login: String, pass: String) {

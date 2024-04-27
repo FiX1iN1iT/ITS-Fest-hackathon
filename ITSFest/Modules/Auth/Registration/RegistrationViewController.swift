@@ -279,10 +279,10 @@ private extension RegistrationViewController {
     
     func makeRegistrationContainer() {
         
-        registrationLabel.text = "Don't have an account?"
+        registrationLabel.text = "Already have an account?"
+        registrationButton.setTitle("Log in", for: .normal)
+        registrationButton.addTarget(self, action: #selector(logInButtonDidTapped), for: .touchUpInside)
         
-        registrationButton.setTitle("Sign up", for: .normal)
-
         configureFooterContainer(container: registrationContainer,
                                  label: registrationLabel,
                                  button: registrationButton)
