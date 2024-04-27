@@ -17,8 +17,8 @@ extension UIColor {
     }()
     
     static let accentColor: UIColor = {
-        guard let color = UIColor(named: "Accent") else {
-            fatalError("Can't find color: Accent")
+        guard let color = UIColor(named: "AccentColor") else {
+            fatalError("Can't find color: AccentColor")
         }
         
         return color

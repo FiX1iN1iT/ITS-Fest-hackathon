@@ -19,7 +19,6 @@ final class WeeklyCalendarViewController: UIViewController {
     // MARK: - Public Properties
     
     weak var delegate: WeeklyCalendarViewControllerDelegate?
-    var calendarService: CalendarServiceDescription?
     
     // MARK: - Private Properties
     
@@ -55,8 +54,8 @@ private extension WeeklyCalendarViewController {
     }
     
     func setupMonthLabel() {
-        monthLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        monthLabel.textColor = .label
+        monthLabel.font = UIFont.systemFont(ofSize: Constants.MonthLabel.fontSize, weight: Constants.MonthLabel.fontWeight)
+        monthLabel.textColor = Constants.MonthLabel.textColor
         configureMonthLabel()
         
         view.addSubview(monthLabel)
@@ -73,7 +72,7 @@ private extension WeeklyCalendarViewController {
         weekCollectionView.delegate = self
         weekCollectionView.register(WeekCollectionViewCell.self, forCellWithReuseIdentifier: WeekCollectionViewCell.reuseID)
         
-        weekCollectionView.backgroundColor = .clear
+        weekCollectionView.backgroundColor = Constants.WeekCollectionView.backgroundColor
         
         weekCollectionView.showsHorizontalScrollIndicator = false
         weekCollectionView.showsVerticalScrollIndicator = false
@@ -99,10 +98,7 @@ private extension WeeklyCalendarViewController {
     // MARK: - Configure
     
     func configureMonthLabel(with date: Date = Date()) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Constants.MonthLabel.dateFormat
-        let monthText = dateFormatter.string(from: date)
-        monthLabel.text = monthText
+        monthLabel.text = date.extractDate(with: Constants.MonthLabel.dateFormat)
     }
     
     // MARK: - Init
@@ -113,20 +109,12 @@ private extension WeeklyCalendarViewController {
     }
     
     func initCalendar() {
-        guard let fetchedCalendar = calendarService?.fetchWeeklyCalendar(for: Date()) else {
-            return
-        }
-        
-        calendar = fetchedCalendar
+        calendar = CalendarService.shared.fetchWeeklyCalendar(for: Date())
     }
     
     func initSelectedCell() {
-        guard let weekdayIndex = calendarService?.getWeekdayIndex(from: Date()) else {
-            return
-        }
-        
         let outerIndexPath = IndexPath(item: calendar.count / 2, section: 0)
-        let innerIndex = weekdayIndex
+        let innerIndex = CalendarService.shared.getWeekdayIndex(from: Date())
         let innerIndexPath = IndexPath(item: innerIndex, section: 0)
         selectedCell = (outerIndexPath, innerIndexPath)
     }
@@ -203,9 +191,13 @@ private extension WeeklyCalendarViewController {
         
         struct WeekCollectionView {
             static let height: CGFloat = 60
+            static let backgroundColor: UIColor = .clear
         }
         
         struct MonthLabel {
+            static let fontSize: CGFloat = 20
+            static let fontWeight: UIFont.Weight = .bold
+            static let textColor: UIColor = .label
             static let dateFormat: String = "MMMM"
             static let height: CGFloat = 20
             static let horizontalMargin: CGFloat = 20

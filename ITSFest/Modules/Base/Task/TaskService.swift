@@ -8,12 +8,8 @@
 import Foundation
 import Firebase
 
-enum CustomError: String, Error {
-    case unknownError = "Неопределнная ошибка"
-}
-
 protocol TaskServiceDescription: AnyObject {
-    func getTasks(on date: Date, completion: @escaping (Result<[CalendarTask], CustomError>) -> Void)
+    func getTasks(on date: Date, completion: @escaping (Result<[CalendarTask], TaskServiceError>) -> Void)
 }
 
 class TaskService: TaskServiceDescription {
@@ -21,7 +17,7 @@ class TaskService: TaskServiceDescription {
     
     // MARK: - GET
     
-    func getTasks(on date: Date, completion: @escaping (Result<[CalendarTask], CustomError>) -> Void) {
+    func getTasks(on date: Date, completion: @escaping (Result<[CalendarTask], TaskServiceError>) -> Void) {
 //        guard let userUID = Auth.auth().currentUser?.uid else {
 //            completion(.failure(.unknownError))
 //            return

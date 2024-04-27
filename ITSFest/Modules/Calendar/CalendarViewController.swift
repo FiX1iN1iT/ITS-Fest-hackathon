@@ -10,8 +10,6 @@ import UIKit
 import SnapKit
 
 final class CalendarViewController: UIViewController {
-    var calendarService: CalendarServiceDescription?
-    
     private let output: CalendarViewOutput
     
     private let weeklyCalendarViewController = WeeklyCalendarViewController()
@@ -56,7 +54,6 @@ private extension CalendarViewController {
     func setupWeeklyCalendarViewController() {
         addChild(weeklyCalendarViewController)
         weeklyCalendarViewController.delegate = self
-        weeklyCalendarViewController.calendarService = calendarService
         view.addSubview(weeklyCalendarViewController.view)
         
         weeklyCalendarViewController.view.snp.makeConstraints { make in
@@ -68,15 +65,11 @@ private extension CalendarViewController {
     }
     
     func setupTitleLabel() {
-        titleLabel.text = "Today's Tasks"
-        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        titleLabel.textColor = UIColor.label
-        
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(20)
-            make.top.equalTo(weeklyCalendarViewController.view.snp.bottom).inset(-20)
-            make.height.equalTo(20)
+            make.horizontalEdges.equalToSuperview().inset(Constants.TitleLabel.horizontalInsets)
+            make.top.equalTo(weeklyCalendarViewController.view.snp.bottom).inset(Constants.TitleLabel.topInset)
+            make.height.equalTo(Constants.TitleLabel.height)
         }
     }
     
@@ -85,8 +78,8 @@ private extension CalendarViewController {
         tasksTableView.dataSource = self
         tasksTableView.register(TaskTableViewCell.self, forCellReuseIdentifier: TaskTableViewCell.reuseID)
 
-        tasksTableView.sectionHeaderHeight = 0
-        tasksTableView.backgroundColor = .clear
+        tasksTableView.sectionHeaderHeight = Constants.TasksTableView.sectionHeaderHeight
+        tasksTableView.backgroundColor = Constants.TasksTableView.backgroundColor
         
         view.addSubview(tasksTableView)
         tasksTableView.snp.makeConstraints { make in
@@ -142,7 +135,7 @@ extension CalendarViewController: UITableViewDataSource {
 
 extension CalendarViewController: CalendarViewInput {
     func configure(with viewModel: CalendarViewModel) {
-        print(#function)
+        titleLabel.attributedText = viewModel.title
     }
     
     func reloadData() {
@@ -150,12 +143,12 @@ extension CalendarViewController: CalendarViewInput {
     }
     
     func showEmptyStateView() {
-        titleLabel.text = ""
+        titleLabel.isHidden = true
         view.addSubview(emptyStateView)
         
         emptyStateView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
-            make.top.equalTo(weeklyCalendarViewController.view.snp.bottom).inset(20)
+            make.top.equalTo(weeklyCalendarViewController.view.snp.bottom)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
@@ -165,6 +158,7 @@ extension CalendarViewController: CalendarViewInput {
             return
         }
         
+        titleLabel.isHidden = false
         emptyStateView.removeFromSuperview()
     }
     
@@ -193,6 +187,17 @@ private extension CalendarViewController {
         struct WeeklyCalendarViewController {
             static let marginTop: CGFloat = 20
             static let height: CGFloat = 90
+        }
+        
+        struct TitleLabel {
+            static let horizontalInsets: CGFloat = 20
+            static let topInset: CGFloat = -20
+            static let height: CGFloat = 30
+        }
+        
+        struct TasksTableView {
+            static let sectionHeaderHeight: CGFloat = 0
+            static let backgroundColor: UIColor = .clear
         }
     }
 }

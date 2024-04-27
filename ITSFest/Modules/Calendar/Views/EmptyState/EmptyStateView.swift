@@ -19,13 +19,11 @@ final class EmptyStateView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
-        configure()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
-        configure()
     }
 }
 
@@ -36,6 +34,7 @@ private extension EmptyStateView {
     func setup() {
         setupView()
         setupTitleLabel()
+        configure()
     }
     
     func setupView() {
@@ -48,7 +47,6 @@ private extension EmptyStateView {
         addSubview(titleLabel)        
         titleLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
-//                .inset(Constants.ImageView.marginTop)
             make.height.equalTo(Constants.TitleLabel.height)
             make.horizontalEdges.equalToSuperview()
         }

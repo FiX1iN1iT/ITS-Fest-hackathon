@@ -28,6 +28,8 @@ extension CalendarPresenter: CalendarModuleInput {
 
 extension CalendarPresenter: CalendarViewOutput {
     func didLoadView() {
+        let viewModel = CalendarViewModel()
+        view?.configure(with: viewModel)
         interactor.loadTasks(for: Date())
     }
     

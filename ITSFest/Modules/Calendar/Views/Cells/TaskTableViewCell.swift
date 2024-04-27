@@ -14,7 +14,7 @@ final class TaskTableViewCell: UITableViewCell {
     private let titleLabel = UILabel()
     private let timeLabel = UILabel()
     private let backgroundIndicatorView = UIView()
-    private let profilesView = UIView()  // create custom view with collection view
+    private let profilesView = UIView()
     
     // MARK: - Init
     
@@ -43,31 +43,29 @@ private extension TaskTableViewCell {
     func setup() {
         setupView()
         setupBackgroundIndicatorView()
-        setupProfilesView()
         setupStackViews()
     }
     
     func setupView() {
-        let selectedView = UIView()
-        selectedView.backgroundColor = UIColor.accentColor
-        selectedBackgroundView = selectedView
         backgroundColor = Constants.backgroundColor
-        layer.cornerRadius = 16
+        layer.cornerRadius = Constants.cornerRadius
+    }
+    
+    func setupSelectedBackgroundView() {
+        let selectedView = UIView()
+        selectedView.backgroundColor = Constants.SelectedBackgroundView.backgroundColor
+        selectedBackgroundView = selectedView
     }
     
     func setupBackgroundIndicatorView() {
-        backgroundIndicatorView.backgroundColor = UIColor.accentColor
+        backgroundIndicatorView.backgroundColor = Constants.BackgroundIndicatorView.backgroundColor
         
         addSubview(backgroundIndicatorView)
         backgroundIndicatorView.snp.makeConstraints { make in
             make.verticalEdges.equalToSuperview()
             make.leading.equalToSuperview()
-            make.width.equalTo(10)
+            make.width.equalTo(Constants.BackgroundIndicatorView.width)
         }
-    }
-    
-    func setupProfilesView() {
-
     }
     
     func setupStackViews() {
@@ -83,12 +81,12 @@ private extension TaskTableViewCell {
         horizontalStackView.addArrangedSubview(verticalStackView)
         horizontalStackView.addArrangedSubview(profilesView)
         profilesView.snp.makeConstraints { make in
-            make.size.equalTo(40)
+            make.size.equalTo(Constants.ProfilesView.size)
         }
         
         addSubview(horizontalStackView)
         horizontalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(16)
+            make.edges.equalToSuperview().inset(Constants.HorizontalStackView.insets)
         }
     }
 }
@@ -98,5 +96,23 @@ private extension TaskTableViewCell {
 private extension TaskTableViewCell {
     struct Constants {
         static let backgroundColor: UIColor = UIColor.accentBackgroundColor
+        static let cornerRadius: CGFloat = 16
+        
+        struct SelectedBackgroundView {
+            static let backgroundColor: UIColor = UIColor.accentColor
+        }
+        
+        struct BackgroundIndicatorView {
+            static let backgroundColor: UIColor = UIColor.accentColor
+            static let width: CGFloat = 10
+        }
+        
+        struct ProfilesView {
+            static let size: CGFloat = 40
+        }
+        
+        struct HorizontalStackView {
+            static let insets: CGFloat = 16
+        }
     }
 }

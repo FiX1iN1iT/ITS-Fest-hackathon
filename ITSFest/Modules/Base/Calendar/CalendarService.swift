@@ -13,7 +13,10 @@ protocol CalendarServiceDescription {
 }
 
 final class CalendarService: CalendarServiceDescription {
+    static let shared: CalendarServiceDescription = CalendarService()
     private let calendar = Calendar.current
+    
+    private init() {}
     
     func getWeekdayIndex(from date: Date) -> Int {
         let weekdayIndex = calendar.component(.weekday, from: date) - 2

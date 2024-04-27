@@ -19,8 +19,6 @@ final class CalendarContainer {
         let presenter = CalendarPresenter(router: router, interactor: interactor)
         let viewController = CalendarViewController(output: presenter)
         
-        viewController.calendarService = context.calendarService
-        
         presenter.view = viewController
         presenter.moduleOutput = context.moduleOutput
         
@@ -40,5 +38,4 @@ final class CalendarContainer {
 struct CalendarContext {
     weak var moduleOutput: CalendarModuleOutput?
     let taskService: TaskServiceDescription = TaskService()
-    let calendarService: CalendarServiceDescription = CalendarService()
 }
