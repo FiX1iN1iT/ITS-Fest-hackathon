@@ -30,12 +30,11 @@ extension AuthPresenter: AuthViewOutput {
     }
     
     func logInByGoogle() {
-        print(#function)
+//        view?.showAlert(title: "Comming soon...")
     }
     
     func showPassword() {
         view?.togglePasswordDisplay()
-        print(#function)
     }
     
     func recoverPassword() {

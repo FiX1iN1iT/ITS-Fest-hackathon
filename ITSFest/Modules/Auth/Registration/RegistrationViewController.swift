@@ -309,7 +309,6 @@ private extension RegistrationViewController {
     @objc
     func mainRegisterButtonDidTapped() {
         output.registerBy(name: nameTextField.text ?? "", login: emailTextField.text ?? "", pass: passwordLabel.text ?? "")
-        print(#function)
     }
     
     @objc
@@ -348,7 +347,7 @@ extension RegistrationViewController: RegistrationViewInput {
         }
     }
     
-    func showAlert() {
+    func showAlert(title: String) {
         print("alert")
     }
     

@@ -8,8 +8,15 @@
 
 import UIKit
 
-final class RegistrationRouter {
+final class RegistrationRouter: BaseSwiftRouter {
 }
 
 extension RegistrationRouter: RegistrationRouterInput {
+    func openLogin() {
+        openModuleFromViewController(sourceView: self.view, openView: AuthContainer.assemble().viewController, needHavController: false)
+    }
+    
+    func openHome() {
+        // TODO: - 
+    }
 }

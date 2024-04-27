@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 protocol RegistrationModuleInput {
     var moduleOutput: RegistrationModuleOutput? { get }
@@ -17,8 +18,8 @@ protocol RegistrationModuleOutput: AnyObject {
 
 protocol RegistrationViewInput: AnyObject {
     func toggleCheckbox()
-    func showAlert()
-    func togglePasswordDisplay() 
+    func showAlert(title: String)
+    func togglePasswordDisplay()
 }
 
 protocol RegistrationViewOutput: AnyObject {
@@ -34,7 +35,11 @@ protocol RegistrationInteractorInput: AnyObject {
 }
 
 protocol RegistrationInteractorOutput: AnyObject {
+    func failureRegistration(with error: Error)
+    func successRegistration(with result: AuthDataResult?)
 }
 
 protocol RegistrationRouterInput: AnyObject {
+    func openLogin()
+    func openHome()
 }

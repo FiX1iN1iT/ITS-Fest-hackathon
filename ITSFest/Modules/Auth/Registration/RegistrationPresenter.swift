@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 final class RegistrationPresenter {
     weak var view: RegistrationViewInput?
@@ -34,7 +35,7 @@ extension RegistrationPresenter: RegistrationViewOutput {
     }
     
     func registerByGoogle() {
-        print(#function)
+//        view?.showAlert(title: "Comming soon...")
     }
     
     func registerBy(name: String, login: String, pass: String) {
@@ -42,9 +43,17 @@ extension RegistrationPresenter: RegistrationViewOutput {
     }
     
     func goToLogin() {
-        print(#function)
+        router.openLogin()
     }
 }
 
 extension RegistrationPresenter: RegistrationInteractorOutput {
+    func failureRegistration(with error: Error) {
+        view?.showAlert(title: error.localizedDescription)
+    }
+    
+    func successRegistration(with result: AuthDataResult?) {
+        router.openHome()
+    }
+    
 }

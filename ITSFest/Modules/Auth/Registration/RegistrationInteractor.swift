@@ -10,7 +10,7 @@ import Foundation
 
 final class RegistrationInteractor {
     weak var output: RegistrationInteractorOutput?
-    weak var authService: AuthService?
+    var authService: AuthService?
     
     init(authService: AuthService? = nil) {
         self.authService = authService
@@ -19,9 +19,9 @@ final class RegistrationInteractor {
     private func registerUser(_ model: AuthModel) async {
         do {
             let result = try await authService?.register(with: model)
-            // output?.handleSuccess...
-        } catch {
-            // output?.handleError...
+            output?.successRegistration(with: result)
+        } catch (let error) {
+            output?.failureRegistration(with: error)
         }
     }
 }
@@ -32,7 +32,9 @@ extension RegistrationInteractor: RegistrationInteractorInput {
             do {
                 let result = try await authService?.register(with: model)
                 // output?.handleSuccess...
-            } catch {
+                print(result)
+            } catch (let error) {
+                print(error.localizedDescription)
                 // output?.handleError...
             }
         }
