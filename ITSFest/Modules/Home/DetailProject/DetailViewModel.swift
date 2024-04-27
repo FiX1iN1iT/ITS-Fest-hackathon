@@ -17,5 +17,5 @@ struct DetailViewModel {
 
 struct TaskModel {
     let title: String
-    let isCompleted: Bool
+    var isCompleted: Bool
 }

@@ -54,6 +54,12 @@
 		748204652BDC1E7C005E7BF2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204642BDC1E7C005E7BF2 /* DetailViewModel.swift */; };
 		748204672BDC614B005E7BF2 /* DetailProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204662BDC614B005E7BF2 /* DetailProjectCell.swift */; };
 		7482046A2BDD17E5005E7BF2 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204692BDD17E5005E7BF2 /* CircularProgressBar.swift */; };
+		748204722BDD33B4005E7BF2 /* NewProjectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482046C2BDD33B4005E7BF2 /* NewProjectPresenter.swift */; };
+		748204732BDD33B4005E7BF2 /* NewProjectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482046D2BDD33B4005E7BF2 /* NewProjectRouter.swift */; };
+		748204742BDD33B4005E7BF2 /* NewProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482046E2BDD33B4005E7BF2 /* NewProjectViewController.swift */; };
+		748204752BDD33B4005E7BF2 /* NewProjectProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482046F2BDD33B4005E7BF2 /* NewProjectProtocols.swift */; };
+		748204762BDD33B4005E7BF2 /* NewProjectInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204702BDD33B4005E7BF2 /* NewProjectInteractor.swift */; };
+		748204772BDD33B4005E7BF2 /* NewProjectContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748204712BDD33B4005E7BF2 /* NewProjectContainer.swift */; };
 		9D65C1412BDBABA000BFDFF8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1402BDBABA000BFDFF8 /* SnapKit */; };
 		9D65C1432BDBABA000BFDFF8 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9D65C1422BDBABA000BFDFF8 /* SnapKit-Dynamic */; };
 		9DB778D32BDABDE7001C3B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */; };
@@ -115,6 +121,12 @@
 		748204642BDC1E7C005E7BF2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		748204662BDC614B005E7BF2 /* DetailProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProjectCell.swift; sourceTree = "<group>"; };
 		748204692BDD17E5005E7BF2 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		7482046C2BDD33B4005E7BF2 /* NewProjectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectPresenter.swift; sourceTree = "<group>"; };
+		7482046D2BDD33B4005E7BF2 /* NewProjectRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectRouter.swift; sourceTree = "<group>"; };
+		7482046E2BDD33B4005E7BF2 /* NewProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewController.swift; sourceTree = "<group>"; };
+		7482046F2BDD33B4005E7BF2 /* NewProjectProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectProtocols.swift; sourceTree = "<group>"; };
+		748204702BDD33B4005E7BF2 /* NewProjectInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectInteractor.swift; sourceTree = "<group>"; };
+		748204712BDD33B4005E7BF2 /* NewProjectContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectContainer.swift; sourceTree = "<group>"; };
 		9DB778CF2BDABDE7001C3B34 /* ITSFest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITSFest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB778D22BDABDE7001C3B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB778D42BDABDE7001C3B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +286,19 @@
 			path = UIComponents;
 			sourceTree = "<group>";
 		};
+		7482046B2BDD3387005E7BF2 /* AddProject */ = {
+			isa = PBXGroup;
+			children = (
+				7482046C2BDD33B4005E7BF2 /* NewProjectPresenter.swift */,
+				7482046D2BDD33B4005E7BF2 /* NewProjectRouter.swift */,
+				7482046E2BDD33B4005E7BF2 /* NewProjectViewController.swift */,
+				7482046F2BDD33B4005E7BF2 /* NewProjectProtocols.swift */,
+				748204702BDD33B4005E7BF2 /* NewProjectInteractor.swift */,
+				748204712BDD33B4005E7BF2 /* NewProjectContainer.swift */,
+			);
+			path = AddProject;
+			sourceTree = "<group>";
+		};
 		9D65C1302BDBA74500BFDFF8 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +377,7 @@
 		9DB778FA2BDB12AB001C3B34 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7482046B2BDD3387005E7BF2 /* AddProject */,
 				748204502BDC15C1005E7BF2 /* DetailProject */,
 			);
 			path = Home;
@@ -504,8 +530,10 @@
 				B48BAAC22BDC4EEC00F373BB /* SplashProtocols.swift in Sources */,
 				7482041D2BDBCB01005E7BF2 /* UIColor + HEX.swift in Sources */,
 				9DB779062BDB1554001C3B34 /* NotificationViewController.swift in Sources */,
+				748204762BDD33B4005E7BF2 /* NewProjectInteractor.swift in Sources */,
 				7465F9912BDBA35F00CF0AE5 /* ReplyPresenter.swift in Sources */,
 				7482045B2BDC15D3005E7BF2 /* DetailProjectInteractor.swift in Sources */,
+				748204742BDD33B4005E7BF2 /* NewProjectViewController.swift in Sources */,
 				B48BAAC42BDC4F3200F373BB /* SplashViewModel.swift in Sources */,
 				20A588CE2BDBE2FD00596EE7 /* RegistrationInteractor.swift in Sources */,
 				7465F9A12BDBA36E00CF0AE5 /* FeedInteractor.swift in Sources */,
@@ -522,9 +550,12 @@
 				7465F9932BDBA35F00CF0AE5 /* ReplyViewController.swift in Sources */,
 				7465F9A22BDBA36E00CF0AE5 /* FeedContainer.swift in Sources */,
 				7465F9962BDBA35F00CF0AE5 /* ReplyContainer.swift in Sources */,
+				748204722BDD33B4005E7BF2 /* NewProjectPresenter.swift in Sources */,
+				748204732BDD33B4005E7BF2 /* NewProjectRouter.swift in Sources */,
 				7482045C2BDC15D3005E7BF2 /* DetailProjectContainer.swift in Sources */,
 				7465F99F2BDBA36E00CF0AE5 /* FeedViewController.swift in Sources */,
 				20A588D12BDC11A000596EE7 /* AuthUIComponentsConfigurationProtocol.swift in Sources */,
+				748204752BDD33B4005E7BF2 /* NewProjectProtocols.swift in Sources */,
 				7482046A2BDD17E5005E7BF2 /* CircularProgressBar.swift in Sources */,
 				748204592BDC15D3005E7BF2 /* DetailProjectViewController.swift in Sources */,
 				7465F9942BDBA35F00CF0AE5 /* ReplyProtocols.swift in Sources */,
@@ -539,6 +570,7 @@
 				9DB779082BDB1576001C3B34 /* CalendarViewController.swift in Sources */,
 				748204672BDC614B005E7BF2 /* DetailProjectCell.swift in Sources */,
 				7465F9722BDB9CDD00CF0AE5 /* AuthService.swift in Sources */,
+				748204772BDD33B4005E7BF2 /* NewProjectContainer.swift in Sources */,
 				7482045A2BDC15D3005E7BF2 /* DetailProjectProtocols.swift in Sources */,
 				9DB778D52BDABDE7001C3B34 /* SceneDelegate.swift in Sources */,
 				B48BAACA2BDC56D100F373BB /* ColorsConstants.swift in Sources */,

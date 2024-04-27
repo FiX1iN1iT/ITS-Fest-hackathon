@@ -33,7 +33,6 @@ extension DetailProjectCell {
     }
     
     private func setupConstraints() {
-        titleLabel.text = "Title amamammama"
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         
@@ -41,5 +40,22 @@ extension DetailProjectCell {
             make.centerY.equalToSuperview()
             make.left.equalToSuperview().offset(32)
         }
+    }
+}
+
+extension DetailProjectCell {
+    func configureWith(_ model: TaskModel) {
+        titleLabel.text = model.title
+    }
+    
+    func changeBackgroundColor(_ done: Bool) {
+        
+        if done {
+            backgroundColor = UIColor.systemYellow
+        } else {
+            backgroundColor = UIColor(hex: "455A64")
+        }
+        
+        self.layoutIfNeeded()
     }
 }
