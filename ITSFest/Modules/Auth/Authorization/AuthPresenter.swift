@@ -30,7 +30,7 @@ extension AuthPresenter: AuthViewOutput {
     }
     
     func logInByGoogle() {
-//        view?.showAlert(title: "Comming soon...")
+        view?.showAlert(title: "Comming soon...")
     }
     
     func showPassword() {
@@ -38,7 +38,7 @@ extension AuthPresenter: AuthViewOutput {
     }
     
     func recoverPassword() {
-        print(#function)
+        view?.showAlert(title: "Comming soon...")
     }
     
     func goToRegistration() {

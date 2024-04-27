@@ -242,7 +242,6 @@ private extension RegistrationViewController {
         
         logInButton.setTitle("Log In", for: .normal)
         configureMainButton(button: logInButton)
-        
         logInButton.addTarget(self, action: #selector(mainRegisterButtonDidTapped), for: .touchUpInside)
         
         logInButton.snp.makeConstraints { make in
@@ -268,6 +267,7 @@ private extension RegistrationViewController {
         
         googleLogInButton.setTitle("Google", for: .normal)
         googleLogInButton.setImage(UIImage(systemName: "person"), for: .normal)
+        googleLogInButton.addTarget(self, action: #selector(googleRegisterButtonDidTapped), for: .touchUpInside)
 
         configureSecondaryButton(button: googleLogInButton)
         
@@ -348,7 +348,9 @@ extension RegistrationViewController: RegistrationViewInput {
     }
     
     func showAlert(title: String) {
-        print("alert")
+        let ac = UIAlertController(title: "Error", message: title, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(ac, animated: true)
     }
     
 }

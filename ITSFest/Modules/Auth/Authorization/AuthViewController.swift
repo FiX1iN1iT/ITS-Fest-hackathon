@@ -275,7 +275,9 @@ extension AuthViewController: AuthViewInput {
         }
     }
     
-    func showAlert() {
-        print("alert")
+    func showAlert(title: String) {
+        let ac = UIAlertController(title: "Error", message: title, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(ac, animated: true)
     }
 }

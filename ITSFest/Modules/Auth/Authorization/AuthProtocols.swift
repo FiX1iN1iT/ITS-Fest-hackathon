@@ -17,7 +17,7 @@ protocol AuthModuleOutput: AnyObject {
 
 protocol AuthViewInput: AnyObject {
     func togglePasswordDisplay()
-    func showAlert()
+    func showAlert(title: String)
 }
 
 protocol AuthViewOutput: AnyObject {
