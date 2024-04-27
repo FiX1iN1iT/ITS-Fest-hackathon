@@ -74,6 +74,7 @@ final class DetailProjectViewController: UIViewController {
         return collectionView
     }()
     private let addButton = UIButton()
+    let progressBar = CircularProgressBar(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
     
     private let output: DetailProjectViewOutput
     
@@ -115,7 +116,8 @@ private extension DetailProjectViewController {
             projProgressNameLabel,
             allTasksLabel,
             taskCollection,
-            addButton
+            addButton,
+            progressBar
         ].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
@@ -131,6 +133,7 @@ private extension DetailProjectViewController {
         makeAllTaskLabel()
         makeCollectionView()
         makeAddButton()
+        makeProgressView()
     }
     
     func makeNameLabel() {
@@ -169,18 +172,27 @@ private extension DetailProjectViewController {
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-Constants.baseOffset)
         }
     }
-    
+
     func makeProgress() {
         projProgressNameLabel.text = "Project Progress"
         projProgressNameLabel.font = UIFont.systemFont(ofSize: Constants.contentFontSize, weight: .semibold)
         projProgressNameLabel.textColor = .white
-        
+
         projProgressNameLabel.snp.makeConstraints { make in
             make.top.equalTo(projDescLabel.snp.bottom).offset(Constants.expandedOffset)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(Constants.baseOffset)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-Constants.baseOffset)
         }
     }
+
+    func makeProgressView() {
+        configureProgressBar(numOfCompletedTasks: 8, allTasksNum: 26)
+        progressBar.snp.makeConstraints { make in
+            make.centerY.equalTo(projProgressNameLabel.snp.centerY)
+            make.right.equalTo(view.safeAreaLayoutGuide).offset(-Constants.baseOffset)
+            make.width.height.equalTo(50)
+        }
+    }
+
     
     func makeAllTaskLabel() {
         allTasksLabel.text = "All Tasks"
@@ -259,6 +271,10 @@ private extension DetailProjectViewController {
             make.left.equalTo(imagePlacehoder.snp.right).offset(Constants.labelLeftOffset)
             make.bottom.equalTo(container)
         }
+    }
+    
+    private func configureProgressBar(numOfCompletedTasks: Float, allTasksNum: Float) {
+        progressBar.setProgressWithAnimation(duration: 1.0, value: numOfCompletedTasks / allTasksNum)
     }
     
     func makeCollectionView() {
