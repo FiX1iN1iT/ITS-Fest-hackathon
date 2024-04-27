@@ -16,9 +16,17 @@ protocol RegistrationModuleOutput: AnyObject {
 }
 
 protocol RegistrationViewInput: AnyObject {
+    func toggleCheckbox()
+    func showAlert()
+    func togglePasswordDisplay() 
 }
 
 protocol RegistrationViewOutput: AnyObject {
+    func checkboxTapp()
+    func showPassword()
+    func registerByGoogle()
+    func registerBy(name: String, login: String, pass: String)
+    func goToLogin()
 }
 
 protocol RegistrationInteractorInput: AnyObject {

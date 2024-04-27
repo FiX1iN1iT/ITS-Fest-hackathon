@@ -14,6 +14,6 @@ final class AuthRouter: BaseSwiftRouter {
 extension AuthRouter: AuthRouterInput {
     
     func openRegistration() {
-
+//        openModuleFromViewController(sourseView: self.view, openView: RegistrationContainer.assemble(with: RegistrationContext()).viewController)
     }
 }

@@ -25,6 +25,25 @@ extension RegistrationPresenter: RegistrationModuleInput {
 }
 
 extension RegistrationPresenter: RegistrationViewOutput {
+    func checkboxTapp() {
+        view?.toggleCheckbox()
+    }
+    
+    func showPassword() {
+        view?.togglePasswordDisplay()
+    }
+    
+    func registerByGoogle() {
+        print(#function)
+    }
+    
+    func registerBy(name: String, login: String, pass: String) {
+        print(#function)
+    }
+    
+    func goToLogin() {
+        print(#function)
+    }
 }
 
 extension RegistrationPresenter: RegistrationInteractorOutput {
