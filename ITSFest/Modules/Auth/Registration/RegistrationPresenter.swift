@@ -38,7 +38,7 @@ extension RegistrationPresenter: RegistrationViewOutput {
     }
     
     func registerBy(name: String, login: String, pass: String) {
-        print(#function)
+        interactor.register(model: AuthModel(email: login, password: pass))
     }
     
     func goToLogin() {

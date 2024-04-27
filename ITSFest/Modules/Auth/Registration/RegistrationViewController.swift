@@ -243,6 +243,8 @@ private extension RegistrationViewController {
         logInButton.setTitle("Log In", for: .normal)
         configureMainButton(button: logInButton)
         
+        logInButton.addTarget(self, action: #selector(mainRegisterButtonDidTapped), for: .touchUpInside)
+        
         logInButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(Constants.horisontalOffset)
             make.top.equalTo(checkboxContainer.snp.bottom)
@@ -306,7 +308,8 @@ private extension RegistrationViewController {
     
     @objc
     func mainRegisterButtonDidTapped() {
-        output.registerBy(name: "name", login: "login", pass: "pass")
+        output.registerBy(name: nameTextField.text ?? "", login: emailTextField.text ?? "", pass: passwordLabel.text ?? "")
+        print(#function)
     }
     
     @objc

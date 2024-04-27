@@ -27,4 +27,14 @@ final class RegistrationInteractor {
 }
 
 extension RegistrationInteractor: RegistrationInteractorInput {
+    func register(model: AuthModel) {
+        Task {
+            do {
+                let result = try await authService?.register(with: model)
+                // output?.handleSuccess...
+            } catch {
+                // output?.handleError...
+            }
+        }
+    }
 }

@@ -30,6 +30,7 @@ protocol RegistrationViewOutput: AnyObject {
 }
 
 protocol RegistrationInteractorInput: AnyObject {
+    func register(model: AuthModel)
 }
 
 protocol RegistrationInteractorOutput: AnyObject {
